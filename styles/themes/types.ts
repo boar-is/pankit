@@ -35,7 +35,6 @@ export type Theme = {
 
 export type ColorsThemeConfig = {
   colors: {
-    gray: Colors
     background: Color
     foreground: Color
     muted: ColorPair
@@ -57,6 +56,28 @@ export type ColorsThemeConfig = {
       purple: ColorPairWithContent
       pink: ColorPairWithContent
       red: ColorPairWithContent
+    }
+  }
+  typography: {
+    DEFAULT: {
+      css: {
+        '--tw-prose-body': Color
+        '--tw-prose-headings': Color
+        '--tw-prose-lead': Color
+        '--tw-prose-links': Color
+        '--tw-prose-bold': Color
+        '--tw-prose-counters': Color
+        '--tw-prose-bullets': Color
+        '--tw-prose-hr': Color
+        '--tw-prose-quotes': Color
+        '--tw-prose-quote-borders': Color
+        '--tw-prose-captions': Color
+        '--tw-prose-code': Color
+        '--tw-prose-pre-code': Color
+        '--tw-prose-pre-bg': Color
+        '--tw-prose-th-borders': Color
+        '--tw-prose-td-borders': Color
+      }
     }
   }
 }

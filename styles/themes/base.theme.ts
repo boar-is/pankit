@@ -11,7 +11,6 @@ export const baseTheme = ({
   selectors: [':root'],
   theme: {
     colors: {
-      gray,
       background: colors.white,
       foreground: gray['950'],
       muted: {
@@ -85,6 +84,28 @@ export const baseTheme = ({
           content: colors.red['600'],
           DEFAULT: colors.red['200'],
           foreground: colors.red['700'],
+        },
+      },
+    },
+    typography: {
+      DEFAULT: {
+        css: {
+          '--tw-prose-body': gray[700],
+          '--tw-prose-headings': gray[900],
+          '--tw-prose-lead': gray[600],
+          '--tw-prose-links': gray[900],
+          '--tw-prose-bold': gray[900],
+          '--tw-prose-counters': gray[500],
+          '--tw-prose-bullets': gray[300],
+          '--tw-prose-hr': gray[300],
+          '--tw-prose-quotes': gray[200],
+          '--tw-prose-quote-borders': gray[200],
+          '--tw-prose-captions': gray[500],
+          '--tw-prose-code': gray[900],
+          '--tw-prose-pre-code': gray[200],
+          '--tw-prose-pre-bg': gray[800],
+          '--tw-prose-th-borders': gray[300],
+          '--tw-prose-td-borders': gray[200],
         },
       },
     },

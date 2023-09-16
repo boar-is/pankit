@@ -11,7 +11,6 @@ export const darkTheme = ({
   selectors: ['.dark'],
   theme: {
     colors: {
-      gray,
       background: gray['950'],
       foreground: gray['50'],
       muted: {
@@ -85,6 +84,28 @@ export const darkTheme = ({
           content: colors.red['400'],
           DEFAULT: colors.red['600'],
           foreground: colors.red['100'],
+        },
+      },
+    },
+    typography: {
+      DEFAULT: {
+        css: {
+          '--tw-prose-body': gray[300],
+          '--tw-prose-headings': colors.white,
+          '--tw-prose-lead': gray[400],
+          '--tw-prose-links': colors.white,
+          '--tw-prose-bold': colors.white,
+          '--tw-prose-counters': gray[400],
+          '--tw-prose-bullets': gray[600],
+          '--tw-prose-hr': gray[700],
+          '--tw-prose-quotes': gray[100],
+          '--tw-prose-quote-borders': gray[700],
+          '--tw-prose-captions': gray[400],
+          '--tw-prose-code': colors.white,
+          '--tw-prose-pre-code': gray[300],
+          '--tw-prose-pre-bg': 'rgba(var(--colors-muted) / 50%)',
+          '--tw-prose-th-borders': gray[600],
+          '--tw-prose-td-borders': gray[700],
         },
       },
     },

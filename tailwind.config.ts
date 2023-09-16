@@ -25,6 +25,9 @@ const tailwindConfig: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        gray: palette.gray,
+      },
       screens: {
         xs: '375px',
       },
@@ -37,6 +40,8 @@ const tailwindConfig: Config = {
           css: {
             'blockquote p:first-of-type::before': { content: 'none' },
             'blockquote p:first-of-type::after': { content: 'none' },
+            'code::before': { content: 'none' },
+            'code::after': { content: 'none' },
           },
         },
       },
@@ -57,10 +62,10 @@ const tailwindConfig: Config = {
     },
   },
   plugins: [
-    animatePlugin,
     themeSwapperPlugin({
       themes: [baseTheme(palette), darkTheme(palette)],
     }),
+    animatePlugin,
     formsPlugin,
     typographyPlugin,
   ],
