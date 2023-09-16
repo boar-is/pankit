@@ -11,6 +11,7 @@ export const baseTheme = ({
   selectors: [':root'],
   theme: {
     colors: {
+      gray,
       background: colors.white,
       foreground: gray['950'],
       muted: {

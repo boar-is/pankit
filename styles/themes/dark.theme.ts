@@ -11,6 +11,7 @@ export const darkTheme = ({
   selectors: ['.dark'],
   theme: {
     colors: {
+      gray,
       background: gray['950'],
       foreground: gray['50'],
       muted: {

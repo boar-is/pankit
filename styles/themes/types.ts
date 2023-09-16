@@ -35,6 +35,7 @@ export type Theme = {
 
 export type ColorsThemeConfig = {
   colors: {
+    gray: Colors
     background: Color
     foreground: Color
     muted: ColorPair

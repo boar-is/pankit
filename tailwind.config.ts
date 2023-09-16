@@ -25,9 +25,6 @@ const tailwindConfig: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        gray: palette.gray,
-      },
       screens: {
         xs: '375px',
       },
@@ -60,12 +57,12 @@ const tailwindConfig: Config = {
     },
   },
   plugins: [
-    formsPlugin,
-    typographyPlugin,
     animatePlugin,
     themeSwapperPlugin({
       themes: [baseTheme(palette), darkTheme(palette)],
     }),
+    formsPlugin,
+    typographyPlugin,
   ],
 }
 export default tailwindConfig
