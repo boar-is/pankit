@@ -8,10 +8,6 @@ export default function ThemeIndicator() {
   const mounted = useMounted()
   const { theme, setTheme, themes } = useTheme()
 
-  if (!mounted) {
-    return null
-  }
-
   return (
     <div className="flex gap-2">
       {themes.map((t) => (
@@ -21,7 +17,7 @@ export default function ThemeIndicator() {
           onClick={() => setTheme(t)}
           className={cn(
             'rounded-md border-2 bg-muted px-4 py-2 capitalize text-muted-foreground',
-            t === theme && 'border-primary',
+            mounted && t === theme && 'border-primary',
           )}
           suppressHydrationWarning
         >
