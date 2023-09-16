@@ -2,9 +2,15 @@
 
 import { useTheme } from 'next-themes'
 import { cn } from '@/styles'
+import { useMounted } from '@/core/hooks'
 
 export default function ThemeIndicator() {
+  const mounted = useMounted()
   const { theme, setTheme, themes } = useTheme()
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div className="flex gap-2">

@@ -26,21 +26,16 @@
   [multiple]:focus,
   textarea:focus,
   select:focus {
-    @apply border-ring;
+    @apply border-border;
   }
 
   [type='checkbox'],
   [type='radio'] {
-    @apply text-primary;
+    @apply border-border bg-muted text-primary;
   }
 
   [type='checkbox']:focus,
   [type='radio']:focus {
-    @apply ring-ring;
-  }
-
-  button:focus,
-  a:focus {
-    @apply border-border shadow-border outline-0;
+    @apply border-border ring-ring ring-offset-primary;
   }
 }
