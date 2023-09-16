@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import { type Metadata } from 'next'
 import { type ReactNode } from 'react'
-import { cn, inter } from '@/styles'
+import { cn, variables } from '@/styles'
 import Providers from '@/app/providers'
 
 export const metadata: Metadata = {
@@ -17,8 +17,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body
         className={cn(
-          'min-h-screen bg-background font-sans text-foreground antialiased',
-          inter.variable,
+          'min-h-screen bg-background font-base text-foreground antialiased',
+          variables,
         )}
       >
         <Providers>{children}</Providers>

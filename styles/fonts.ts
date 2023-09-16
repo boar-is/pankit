@@ -1,7 +1,10 @@
 import { Inter } from 'next/font/google'
 
-export const inter = Inter({
+export const base = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
-  preload: true,
+  variable: '--font-base',
 })
+
+export const title = base
+
+export const variables = [base, title].map((it) => it.variable)

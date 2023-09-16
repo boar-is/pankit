@@ -12,9 +12,12 @@ export const Login = ({ session }: LoginProps) => {
     return <button onClick={() => void signIn('github')}>Login</button>
   }
   return (
-    <div>
+    <div className="prose prose-2xl">
+      <h1>PanKit</h1>
       <button onClick={() => void signOut()}>Logout</button>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
+      <code>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+      </code>
     </div>
   )
 }

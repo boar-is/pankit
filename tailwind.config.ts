@@ -25,11 +25,23 @@ const tailwindConfig: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        gray: palette.gray,
+      },
       screens: {
         xs: '375px',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
+        base: ['var(--font-base)', ...fontFamily.sans],
+        title: ['var(--font-title)', ...fontFamily.sans],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
+          },
+        },
       },
       keyframes: {
         'accordion-down': {
