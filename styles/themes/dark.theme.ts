@@ -11,23 +11,22 @@ export const darkTheme = ({
   selectors: ['.dark'],
   theme: {
     colors: {
-      border: gray['800'],
-      input: gray['800'],
-      ring: gray['800'],
       background: gray['950'],
       foreground: gray['50'],
       muted: {
         DEFAULT: gray['900'],
         foreground: gray['400'],
       },
-      accent: {
-        DEFAULT: gray['800'],
+      card: {
+        DEFAULT: gray['950'],
         foreground: gray['50'],
       },
       popover: {
         DEFAULT: gray['950'],
         foreground: gray['50'],
       },
+      border: gray['800'],
+      input: gray['800'],
       primary: {
         DEFAULT: primary['700'],
         foreground: primary['50'],
@@ -36,10 +35,15 @@ export const darkTheme = ({
         DEFAULT: secondary['700'],
         foreground: secondary['50'],
       },
+      accent: {
+        DEFAULT: gray['800'],
+        foreground: gray['50'],
+      },
       destructive: {
         DEFAULT: destructive['700'],
         foreground: destructive['50'],
       },
+      ring: gray['800'],
       highlight: {
         gray: {
           content: gray['400'],

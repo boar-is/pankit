@@ -11,23 +11,22 @@ export const baseTheme = ({
   selectors: [':root'],
   theme: {
     colors: {
-      border: gray['50'],
-      input: gray['50'],
-      ring: gray['50'],
       background: colors.white,
       foreground: gray['950'],
       muted: {
         DEFAULT: gray['100'],
         foreground: gray['500'],
       },
-      accent: {
-        DEFAULT: gray['100'],
-        foreground: gray['900'],
+      card: {
+        DEFAULT: colors.white,
+        foreground: gray['950'],
       },
       popover: {
         DEFAULT: colors.white,
         foreground: gray['950'],
       },
+      border: gray['50'],
+      input: gray['50'],
       primary: {
         DEFAULT: primary['500'],
         foreground: primary['50'],
@@ -36,10 +35,15 @@ export const baseTheme = ({
         DEFAULT: secondary['500'],
         foreground: secondary['50'],
       },
+      accent: {
+        DEFAULT: gray['100'],
+        foreground: gray['900'],
+      },
       destructive: {
         DEFAULT: destructive['500'],
         foreground: destructive['50'],
       },
+      ring: gray['50'],
       highlight: {
         gray: {
           content: gray['600'],

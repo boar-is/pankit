@@ -35,17 +35,18 @@ export type Theme = {
 
 export type ColorsThemeConfig = {
   colors: {
-    border: Color
-    input: Color
-    ring: Color
     background: Color
     foreground: Color
     muted: ColorPair
-    accent: ColorPair
+    card: ColorPair
     popover: ColorPair
+    border: Color
+    input: Color
     primary: ColorPair
     secondary: ColorPair
+    accent: ColorPair
     destructive: ColorPair
+    ring: Color
     highlight: {
       gray: ColorPairWithContent
       orange: ColorPairWithContent
