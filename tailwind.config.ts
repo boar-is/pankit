@@ -1,10 +1,65 @@
+import { fontFamily } from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
+import formsPlugin from '@tailwindcss/forms'
+import typographyPlugin from '@tailwindcss/typography'
+import animatePlugin from 'tailwindcss-animate'
+// @ts-expect-error no esm module for this package
+import themeSwapperPlugin from 'tailwindcss-theme-swapper'
+import { baseTheme, type ColorPalette, darkTheme } from './styles/themes'
+import colors from 'tailwindcss/colors'
+
+const gray = colors.slate
+const primary = colors.blue
+const secondary = colors.red
+const destructive = colors.red
+
+const palette = {
+  ...colors,
+  gray,
+  primary,
+  secondary,
+  destructive,
+} satisfies ColorPalette
 
 const tailwindConfig: Config = {
+  darkMode: 'class',
+  safelist: ['dark'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      screens: {
+        xs: '375px',
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
+  },
+  plugins: [
+    formsPlugin,
+    typographyPlugin,
+    animatePlugin,
+    themeSwapperPlugin({
+      themes: [baseTheme(palette), darkTheme(palette)],
+    }),
   ],
 }
 export default tailwindConfig

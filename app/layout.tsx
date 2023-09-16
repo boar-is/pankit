@@ -1,9 +1,8 @@
 import '../styles/globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { type Metadata } from 'next'
 import { type ReactNode } from 'react'
-
-const inter = Inter({ subsets: ['latin'] })
+import { cn, inter } from '@/styles'
+import Providers from '@/app/providers'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,8 +11,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans text-foreground antialiased',
+          inter.variable,
+        )}
+      >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
