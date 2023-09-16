@@ -8,17 +8,11 @@ import themeSwapperPlugin from 'tailwindcss-theme-swapper'
 import { baseTheme, type ColorPalette, darkTheme } from './styles/themes'
 import colors from 'tailwindcss/colors'
 
-const gray = colors.slate
-const primary = colors.blue
-const secondary = colors.red
-const destructive = colors.red
-
 const palette = {
-  ...colors,
-  gray,
-  primary,
-  secondary,
-  destructive,
+  gray: colors.slate,
+  primary: colors.blue,
+  secondary: colors.red,
+  destructive: colors.red,
 } satisfies ColorPalette
 
 const tailwindConfig: Config = {

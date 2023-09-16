@@ -1,5 +1,3 @@
-import { type DefaultColors } from 'tailwindcss/types/generated/colors'
-
 export type Color = string
 export type ColorPair = {
   DEFAULT: Color
@@ -22,7 +20,7 @@ export type Colors = Record<
   | '950',
   Color
 >
-export type ColorPalette = Omit<DefaultColors, 'gray'> & {
+export type ColorPalette = {
   gray: Colors
   primary: Colors
   secondary: Colors

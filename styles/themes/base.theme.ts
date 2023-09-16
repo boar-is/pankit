@@ -1,18 +1,11 @@
 import { type ColorPalette, type Theme } from '@/styles/themes/types'
+import colors from 'tailwindcss/colors'
 
 export const baseTheme = ({
-  white,
   gray,
   primary,
   secondary,
   destructive,
-  orange,
-  yellow,
-  green,
-  blue,
-  purple,
-  pink,
-  red,
 }: ColorPalette): Theme => ({
   name: 'base',
   selectors: [':root'],
@@ -21,7 +14,7 @@ export const baseTheme = ({
       border: gray['50'],
       input: gray['50'],
       ring: gray['50'],
-      background: white,
+      background: colors.white,
       foreground: gray['950'],
       muted: {
         DEFAULT: gray['100'],
@@ -32,7 +25,7 @@ export const baseTheme = ({
         foreground: gray['900'],
       },
       popover: {
-        DEFAULT: white,
+        DEFAULT: colors.white,
         foreground: gray['950'],
       },
       primary: {
@@ -54,39 +47,39 @@ export const baseTheme = ({
           foreground: gray['700'],
         },
         orange: {
-          content: orange['600'],
-          DEFAULT: orange['200'],
-          foreground: orange['700'],
+          content: colors.orange['600'],
+          DEFAULT: colors.orange['200'],
+          foreground: colors.orange['700'],
         },
         yellow: {
-          content: yellow['600'],
-          DEFAULT: yellow['200'],
-          foreground: yellow['700'],
+          content: colors.yellow['600'],
+          DEFAULT: colors.yellow['200'],
+          foreground: colors.yellow['700'],
         },
         green: {
-          content: green['600'],
-          DEFAULT: green['200'],
-          foreground: green['700'],
+          content: colors.green['600'],
+          DEFAULT: colors.green['200'],
+          foreground: colors.green['700'],
         },
         blue: {
-          content: blue['600'],
-          DEFAULT: blue['200'],
-          foreground: blue['700'],
+          content: colors.blue['600'],
+          DEFAULT: colors.blue['200'],
+          foreground: colors.blue['700'],
         },
         purple: {
-          content: purple['600'],
-          DEFAULT: purple['200'],
-          foreground: purple['700'],
+          content: colors.purple['600'],
+          DEFAULT: colors.purple['200'],
+          foreground: colors.purple['700'],
         },
         pink: {
-          content: pink['600'],
-          DEFAULT: pink['200'],
-          foreground: pink['700'],
+          content: colors.pink['600'],
+          DEFAULT: colors.pink['200'],
+          foreground: colors.pink['700'],
         },
         red: {
-          content: red['600'],
-          DEFAULT: red['200'],
-          foreground: red['700'],
+          content: colors.red['600'],
+          DEFAULT: colors.red['200'],
+          foreground: colors.red['700'],
         },
       },
     },
