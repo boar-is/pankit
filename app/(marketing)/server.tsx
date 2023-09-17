@@ -157,6 +157,7 @@ export function MarketingHeader() {
                   >
                     <MenuIcon className="rotate-0 scale-100 transition-transform group-data-[state=open]:-rotate-90 group-data-[state=open]:-scale-0" />
                     <XIcon className="absolute rotate-90 scale-0 transition-transform group-data-[state=open]:rotate-0 group-data-[state=open]:scale-100" />
+                    <span className="sr-only">Open/Close Menu</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="mr-4">
