@@ -6,7 +6,7 @@ export const Brand = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
     <div
       ref={ref}
       className={cn(
-        'flex select-none items-center gap-2 text-xl font-semibold',
+        'flex select-none items-center gap-4 text-xl font-semibold',
         className,
       )}
       {...props}
@@ -22,7 +22,7 @@ export const BrandLogo = forwardRef<
   <div
     ref={ref}
     className={cn(
-      'relative flex h-10 w-10 overflow-hidden rounded-lg',
+      'relative flex h-8 w-8 overflow-hidden rounded-lg',
       className,
     )}
     {...props}

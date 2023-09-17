@@ -30,6 +30,12 @@ import { initials } from '@/core/utils'
 import { env } from '@/env.mjs'
 import { getServerSession } from 'next-auth'
 import { GitHubButton, SignOutButton } from '@/app/(marketing)/client'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuNextLink,
+} from '@/components/ui/navigation-menu'
 
 export async function MarketingHeader() {
   const session = await getServerSession()
@@ -52,8 +58,34 @@ export async function MarketingHeader() {
             </Brand>
           </Link>
         </HeaderItem>
-        <HeaderItem className="hidden flex-1 bg-red-500 md:block">
-          Nav
+        <HeaderItem
+          className="mr-auto hidden flex-1 text-muted-foreground md:block"
+          asChild
+        >
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuNextLink href="/#features">
+                  Features
+                </NavigationMenuNextLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuNextLink href="/pricing">
+                  Pricing
+                </NavigationMenuNextLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuNextLink href="/Blog">
+                  Blog
+                </NavigationMenuNextLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuNextLink href="/docs">
+                  Docs
+                </NavigationMenuNextLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </HeaderItem>
         <HeaderItem className="hidden bg-green-500 md:block">
           Actions
@@ -110,12 +142,12 @@ export async function MarketingHeader() {
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem asChild>
-                  <a href="/#features">
+                  <Link href="/#features">
                     <DropdownMenuIcon>
                       <ZapIcon />
                     </DropdownMenuIcon>
                     Features
-                  </a>
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/pricing">

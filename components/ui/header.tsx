@@ -53,7 +53,10 @@ export const HeaderContainer = forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('container flex justify-between gap-8', className)}
+    className={cn(
+      'container flex items-center justify-between gap-12',
+      className,
+    )}
     {...props}
   />
 ))
