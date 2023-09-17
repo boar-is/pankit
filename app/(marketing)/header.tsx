@@ -36,6 +36,7 @@ import {
   NavigationMenuList,
   NavigationMenuNextLink,
 } from '@/components/ui/navigation-menu'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export async function MarketingHeader() {
   const session = await getServerSession()
@@ -59,7 +60,7 @@ export async function MarketingHeader() {
           </Link>
         </HeaderItem>
         <HeaderItem
-          className="mr-auto hidden flex-1 text-muted-foreground md:block"
+          className="mr-auto hidden flex-1 text-muted-foreground lg:block"
           asChild
         >
           <NavigationMenu>
@@ -87,141 +88,157 @@ export async function MarketingHeader() {
             </NavigationMenuList>
           </NavigationMenu>
         </HeaderItem>
-        <HeaderItem className="hidden bg-green-500 md:block">
-          Actions
-        </HeaderItem>
-        <HeaderItem className="md:hidden">
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className="group"
-              asChild
-            >
+        <HeaderItem className="flex items-center gap-1">
+          <ThemeToggle />
+          <menu className="hidden items-center gap-1 lg:flex">
+            <li>
               <Button
-                type="button"
                 variant="ghost"
                 size="icon"
+                asChild
               >
-                <MenuIcon className="hidden group-data-[state=closed]:block" />
-                <XIcon className="hidden group-data-[state=open]:block" />
+                <Link
+                  href={env.NEXT_PUBLIC_GITHUB_REPO_URL}
+                  target="_blank"
+                >
+                  <GitHubIcon />
+                </Link>
               </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="mr-4">
-              <DropdownMenuLabel>
-                {session?.user ? (
-                  <Button
-                    variant="inverted"
-                    className="w-full !rounded-md"
-                    asChild
-                  >
-                    <Link
-                      href="/dashboard"
-                      className="flex gap-2"
+            </li>
+          </menu>
+          <div className="lg:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className="group"
+                asChild
+              >
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                >
+                  <MenuIcon className="rotate-0 scale-100 transition-transform group-data-[state=open]:-rotate-90 group-data-[state=open]:-scale-0" />
+                  <XIcon className="absolute rotate-90 scale-0 transition-transform group-data-[state=open]:rotate-0 group-data-[state=open]:scale-100" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="mr-4">
+                <DropdownMenuLabel>
+                  {session?.user ? (
+                    <Button
+                      variant="inverted"
+                      className="w-full !rounded-md"
+                      asChild
                     >
-                      <Avatar className="h-6 w-6">
-                        <AvatarImage
-                          src={session.user.image ?? ''}
-                          asChild
-                        >
-                          <Image
+                      <Link
+                        href="/dashboard"
+                        className="flex gap-2"
+                      >
+                        <Avatar className="h-6 w-6">
+                          <AvatarImage
                             src={session.user.image ?? ''}
-                            alt={`Avatar of ${session?.user.image}`}
-                            fill
-                          />
-                        </AvatarImage>
-                        <AvatarFallback>
-                          {initials(session.user.name)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="font-semibold">Go to Dashboard</span>
+                            asChild
+                          >
+                            <Image
+                              src={session.user.image ?? ''}
+                              alt={`Avatar of ${session?.user.image}`}
+                              fill
+                            />
+                          </AvatarImage>
+                          <AvatarFallback>
+                            {initials(session.user.name)}
+                          </AvatarFallback>
+                        </Avatar>
+                        <span className="font-semibold">Go to Dashboard</span>
+                      </Link>
+                    </Button>
+                  ) : (
+                    <GitHubButton />
+                  )}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem asChild>
+                    <Link href="/#features">
+                      <DropdownMenuIcon>
+                        <ZapIcon />
+                      </DropdownMenuIcon>
+                      Features
                     </Link>
-                  </Button>
-                ) : (
-                  <GitHubButton />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/pricing">
+                      <DropdownMenuIcon>
+                        <CoinsIcon />
+                      </DropdownMenuIcon>
+                      Pricing
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/blog">
+                      <DropdownMenuIcon>
+                        <NewspaperIcon />
+                      </DropdownMenuIcon>
+                      Blog
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/docs">
+                      <DropdownMenuIcon>
+                        <GraduationCapIcon />
+                      </DropdownMenuIcon>
+                      Docs
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={env.NEXT_PUBLIC_GITHUB_REPO_URL}
+                      target="_blank"
+                    >
+                      <DropdownMenuIcon>
+                        <GitHubIcon />
+                      </DropdownMenuIcon>
+                      GitHub
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={env.NEXT_PUBLIC_GITHUB_REPO_URL + '/discussions'}
+                      target="_blank"
+                    >
+                      <DropdownMenuIcon>
+                        <LifeBuoyIcon />
+                      </DropdownMenuIcon>
+                      Support
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={env.NEXT_PUBLIC_GITHUB_REPO_URL + '/issues'}
+                      target="_blank"
+                    >
+                      <DropdownMenuIcon>
+                        <BugIcon />
+                      </DropdownMenuIcon>
+                      Found a bug?
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                {session?.user && (
+                  <>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem asChild>
+                        <SignOutButton />
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </>
                 )}
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                  <Link href="/#features">
-                    <DropdownMenuIcon>
-                      <ZapIcon />
-                    </DropdownMenuIcon>
-                    Features
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/pricing">
-                    <DropdownMenuIcon>
-                      <CoinsIcon />
-                    </DropdownMenuIcon>
-                    Pricing
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/blog">
-                    <DropdownMenuIcon>
-                      <NewspaperIcon />
-                    </DropdownMenuIcon>
-                    Blog
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs">
-                    <DropdownMenuIcon>
-                      <GraduationCapIcon />
-                    </DropdownMenuIcon>
-                    Docs
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                  <a
-                    href={env.NEXT_PUBLIC_GITHUB_REPO_URL}
-                    target="_blank"
-                  >
-                    <DropdownMenuIcon>
-                      <GitHubIcon />
-                    </DropdownMenuIcon>
-                    GitHub
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a
-                    href={env.NEXT_PUBLIC_GITHUB_REPO_URL + '/discussions'}
-                    target="_blank"
-                  >
-                    <DropdownMenuIcon>
-                      <LifeBuoyIcon />
-                    </DropdownMenuIcon>
-                    Support
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a
-                    href={env.NEXT_PUBLIC_GITHUB_REPO_URL + '/issues'}
-                    target="_blank"
-                  >
-                    <DropdownMenuIcon>
-                      <BugIcon />
-                    </DropdownMenuIcon>
-                    Found a bug?
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              {session?.user && (
-                <>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem asChild>
-                      <SignOutButton />
-                    </DropdownMenuItem>
-                  </DropdownMenuGroup>
-                </>
-              )}
-            </DropdownMenuContent>
-          </DropdownMenu>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </HeaderItem>
       </HeaderContainer>
     </Header>

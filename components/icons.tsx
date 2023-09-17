@@ -23,7 +23,7 @@ export const GitHubIcon = forwardRef<SVGSVGElement, IconProps>(
     return (
       <svg
         viewBox="0 0 256 250"
-        className={cn('h-4 w-4', className)}
+        className={cn('h-5', className)}
         ref={ref}
       >
         <title>GitHub</title>
