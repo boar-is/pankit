@@ -40,7 +40,7 @@ export const darkTheme = ({
         foreground: gray['50'],
       },
       destructive: {
-        DEFAULT: destructive['700'],
+        DEFAULT: destructive['600'],
         foreground: destructive['50'],
       },
       ring: gray['800'],

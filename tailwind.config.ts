@@ -1,4 +1,4 @@
-import { fontFamily } from 'tailwindcss/defaultTheme'
+import { fontFamily, spacing } from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
 import formsPlugin from '@tailwindcss/forms'
 import typographyPlugin from '@tailwindcss/typography'
@@ -24,6 +24,10 @@ const tailwindConfig: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: spacing['4'],
+    },
     extend: {
       colors: {
         gray: palette.gray,

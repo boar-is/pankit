@@ -21,6 +21,7 @@ export const env = createEnv({
   },
   client: {
     NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'test', 'production']),
+    NEXT_PUBLIC_GITHUB_REPO_URL: z.string().url(),
   },
   runtimeEnv: {
     AUTH_GITHUB_ID: process.env['AUTH_GITHUB_ID'],
@@ -30,5 +31,6 @@ export const env = createEnv({
     POSTGRES_PRISMA_URL: process.env['POSTGRES_PRISMA_URL'],
     POSTGRES_URL_NON_POOLING: process.env['POSTGRES_URL_NON_POOLING'],
     NEXT_PUBLIC_NODE_ENV: process.env['NODE_ENV'],
+    NEXT_PUBLIC_GITHUB_REPO_URL: process.env['NEXT_PUBLIC_GITHUB_REPO_URL'],
   },
 })
