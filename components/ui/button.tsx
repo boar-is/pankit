@@ -20,8 +20,8 @@ export const buttonVariants = tv({
     },
     size: {
       default: 'px-4 py-2',
-      sm: 'rounded-md px-3',
-      lg: 'rounded-md px-8',
+      sm: 'rounded-md px-8 py-3',
+      lg: 'rounded-md px-12 py-4',
       icon: 'h-10 w-10',
     },
   },
