@@ -15,6 +15,7 @@ export function SignOutButton() {
   return (
     <Button
       color="destructive"
+      variant="outline"
       size="large"
       type="button"
       className="mx-auto max-w-xs"
@@ -28,7 +29,7 @@ export function SignOutButton() {
       <ButtonDecoration>
         <LogOutIcon />
       </ButtonDecoration>
-      Sign Out
+      Sign out
     </Button>
   )
 }

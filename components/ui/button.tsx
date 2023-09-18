@@ -13,7 +13,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { Loader2Icon } from 'lucide-react'
 
 export const buttonVariants = tv({
-  base: 'inline-flex select-none items-center justify-center border-2 border-transparent font-semibold capitalize ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  base: 'inline-flex select-none items-center justify-center border border-transparent font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   variants: {
     color: {
       default: '',
@@ -36,7 +36,7 @@ export const buttonVariants = tv({
     {
       color: 'default',
       variant: 'solid',
-      className: 'bg-foreground text-background hover:bg-foreground/80',
+      className: 'bg-foreground text-background hover:bg-foreground/90',
     },
     {
       color: 'default',
