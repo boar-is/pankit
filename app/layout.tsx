@@ -1,8 +1,9 @@
-import '../styles/globals.css'
+import './globals.css'
 import { type Metadata } from 'next'
 import { type ReactNode } from 'react'
-import { cn, variables } from '@/styles'
 import Providers from '@/app/providers'
+import { cn } from '@shared/lib/utils'
+import { variables } from '@shared/lib/fonts'
 
 export const metadata: Metadata = {
   title: 'PanKit',

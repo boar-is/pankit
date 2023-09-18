@@ -28,7 +28,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@marketing/*": ["./app/(marketing)/*"],
+      "@shared/*": ["./app/_shared/*"],
+      "@auth/*": ["./app/(auth)/*"]
     }
   },
   "include": [

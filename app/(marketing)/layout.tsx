@@ -1,10 +1,10 @@
 import { type PropsWithChildren } from 'react'
-import { MarketingHeader } from '@/app/(marketing)/server'
+import { Header } from '@marketing/_ui/header'
 
 export default async function Layout({ children }: PropsWithChildren) {
   return (
     <div className="flex flex-col">
-      <MarketingHeader />
+      <Header />
       <main>{children}</main>
     </div>
   )
