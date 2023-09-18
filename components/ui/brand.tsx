@@ -6,7 +6,7 @@ export const Brand = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
     <div
       ref={ref}
       className={cn(
-        'flex select-none items-center gap-4 text-xl font-semibold',
+        'flex select-none items-center gap-3 text-xl font-semibold',
         className,
       )}
       {...props}
