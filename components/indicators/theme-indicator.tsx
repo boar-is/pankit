@@ -17,7 +17,10 @@ export default function ThemeIndicator() {
           type="button"
           color="muted"
           onClick={() => setTheme(t)}
-          className={cn(mounted && t === theme && 'border-primary')}
+          className={cn(
+            'backdrop-blur',
+            mounted && t === theme && 'border-primary',
+          )}
           suppressHydrationWarning
         >
           {t}
