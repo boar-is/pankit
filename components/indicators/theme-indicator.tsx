@@ -15,7 +15,7 @@ export default function ThemeIndicator() {
         <Button
           key={t}
           type="button"
-          variant="ghost"
+          color="muted"
           onClick={() => setTheme(t)}
           className={cn(mounted && t === theme && 'border-primary')}
           suppressHydrationWarning

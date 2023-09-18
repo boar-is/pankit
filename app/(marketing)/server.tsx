@@ -141,7 +141,7 @@ export function MarketingHeader() {
             <li>
               <ThemeToggle />
             </li>
-            <li className="ml-5 hidden lg:block">
+            <li className="ml-8 hidden lg:block">
               <SessionButton />
             </li>
             <li className="lg:hidden">

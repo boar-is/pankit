@@ -12,6 +12,7 @@ import {
 import { tv } from 'tailwind-variants'
 import Link from 'next/link'
 import { type PropsWithClassName } from '@/core/types'
+import { buttonVariants } from '@/components/ui/button'
 
 export const NavigationMenu = forwardRef<
   ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -48,8 +49,13 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 
 export const NavigationMenuItem = NavigationMenuPrimitive.Item
 
-export const navigationMenuTriggerStyle = tv({
-  base: 'group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50',
+export const navigationMenuTriggerVariants = tv({
+  extend: buttonVariants,
+  base: 'group data-[active]:bg-muted/50 data-[state=open]:bg-muted/50',
+  defaultVariants: {
+    variant: 'ghost',
+    color: 'muted',
+  },
 })
 
 export const NavigationMenuTrigger = forwardRef<
@@ -58,7 +64,7 @@ export const NavigationMenuTrigger = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), 'group', className)}
+    className={cn(navigationMenuTriggerVariants(), className)}
     {...props}
   >
     {children}{' '}
@@ -97,7 +103,9 @@ export const NavigationMenuNextLink = ({
     legacyBehavior
     passHref
   >
-    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), className)}>
+    <NavigationMenuLink
+      className={cn(navigationMenuTriggerVariants(), className)}
+    >
       {children}
     </NavigationMenuLink>
   </Link>

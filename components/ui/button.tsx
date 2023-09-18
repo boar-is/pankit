@@ -12,18 +12,19 @@ import { type PropsWithAsChild } from '@/core/types'
 import { Slot } from '@radix-ui/react-slot'
 import { Loader2Icon } from 'lucide-react'
 
-const buttonVariants = tv({
-  base: 'group inline-flex select-none items-center justify-center border-2 border-transparent font-semibold capitalize ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+export const buttonVariants = tv({
+  base: 'inline-flex select-none items-center justify-center border-2 border-transparent font-semibold capitalize ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   variants: {
     color: {
       default: '',
+      muted: '',
       destructive: '',
     },
     variant: {
       solid: '',
       outline: '',
       ghost: '',
-      link: 'decoration-2 hover:underline',
+      link: 'decoration-2 underline-offset-4 hover:underline',
     },
     size: {
       small: 'gap-1 rounded px-3 py-1 text-xs',
@@ -45,7 +46,7 @@ const buttonVariants = tv({
     {
       color: 'default',
       variant: ['outline', 'ghost'],
-      className: 'hover:bg-foreground/5 dark:hover:bg-foreground/20',
+      className: 'hover:bg-foreground/5 dark:hover:bg-foreground/10',
     },
     {
       color: 'default',
@@ -56,6 +57,31 @@ const buttonVariants = tv({
       color: 'default',
       variant: 'link',
       className: 'decoration-foreground',
+    },
+    {
+      color: 'muted',
+      variant: 'solid',
+      className: 'bg-muted text-muted-foreground hover:bg-muted/75',
+    },
+    {
+      color: 'muted',
+      variant: ['outline', 'ghost', 'link'],
+      className: 'text-muted-foreground',
+    },
+    {
+      color: 'muted',
+      variant: ['outline', 'ghost'],
+      className: 'hover:bg-muted/25 dark:hover:bg-muted/60',
+    },
+    {
+      color: 'muted',
+      variant: 'outline',
+      className: 'border-muted',
+    },
+    {
+      color: 'muted',
+      variant: 'link',
+      className: 'decoration-muted-foreground',
     },
     {
       color: 'destructive',
@@ -135,7 +161,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = 'Button'
 
-const buttonDecorationVariants = tv({
+export const buttonDecorationVariants = tv({
   base: 'h-[1em] w-[1em]',
 })
 

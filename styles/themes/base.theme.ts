@@ -1,5 +1,7 @@
 import { type ColorPalette, type Theme } from '@/styles/themes/types'
 import colors from 'tailwindcss/colors'
+// noinspection ES6PreferShortImport
+import { hexToRgb } from '../../core/utils'
 
 export const baseTheme = ({
   gray,
@@ -14,8 +16,8 @@ export const baseTheme = ({
       background: colors.white,
       foreground: gray['950'],
       muted: {
-        DEFAULT: gray['100'],
-        foreground: gray['500'],
+        DEFAULT: gray['200'],
+        foreground: gray['700'],
       },
       card: {
         DEFAULT: colors.white,
@@ -36,7 +38,7 @@ export const baseTheme = ({
         foreground: secondary['50'],
       },
       accent: {
-        DEFAULT: gray['100'],
+        DEFAULT: `rgba(${hexToRgb(gray['900'])} / 5%)`,
         foreground: gray['900'],
       },
       destructive: {
