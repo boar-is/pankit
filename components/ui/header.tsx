@@ -11,7 +11,7 @@ export const Header = forwardRef<
   <header
     ref={ref}
     className={cn(
-      'sticky top-0 border-b border-muted/75 bg-background/50 backdrop-blur-lg',
+      'sticky top-0 border-b border-muted/75 bg-background/50 backdrop-blur md:backdrop-blur-lg',
       className,
     )}
     {...props}
