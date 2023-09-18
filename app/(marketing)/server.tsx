@@ -60,6 +60,7 @@ export async function SessionButton() {
                 <Image
                   src={session.user.image ?? ''}
                   alt={`Avatar of ${session?.user.image}`}
+                  priority
                   fill
                 />
               </AvatarImage>
@@ -86,6 +87,7 @@ export function MarketingHeader() {
                 <Image
                   src={logoImage}
                   alt="PanKit Logo"
+                  priority
                   fill
                   className="object-cover"
                 />
