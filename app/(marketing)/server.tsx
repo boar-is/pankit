@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown'
-import { Button } from '@/components/ui/button'
+import { Button, ButtonDecoration } from '@/components/ui/button'
 import {
   BugIcon,
   CoinsIcon,
@@ -44,28 +44,29 @@ export async function SessionButton() {
   if (session?.user) {
     return (
       <Button
-        variant="inverted"
-        className="w-full !rounded-md"
+        className="w-full"
         asChild
       >
         <Link
           href="/dashboard"
           className="flex gap-2"
         >
-          <Avatar className="h-6 w-6">
-            <AvatarImage
-              src={session.user.image ?? ''}
-              asChild
-            >
-              <Image
+          <ButtonDecoration>
+            <Avatar className="h-6 w-6">
+              <AvatarImage
                 src={session.user.image ?? ''}
-                alt={`Avatar of ${session?.user.image}`}
-                fill
-              />
-            </AvatarImage>
-            <AvatarFallback>{initials(session.user.name)}</AvatarFallback>
-          </Avatar>
-          <span className="font-semibold">Go to Dashboard</span>
+                asChild
+              >
+                <Image
+                  src={session.user.image ?? ''}
+                  alt={`Avatar of ${session?.user.image}`}
+                  fill
+                />
+              </AvatarImage>
+              <AvatarFallback>{initials(session.user.name)}</AvatarFallback>
+            </Avatar>
+          </ButtonDecoration>
+          Go to Dashboard
         </Link>
       </Button>
     )
@@ -123,11 +124,10 @@ export function MarketingHeader() {
           </NavigationMenu>
         </HeaderItem>
         <HeaderItem asChild>
-          <menu className="flex items-center gap-1 lg:gap-4">
+          <menu className="flex items-center gap-1 lg:gap-2">
             <li>
               <Button
                 variant="ghost"
-                size="icon"
                 asChild
               >
                 <Link
@@ -141,7 +141,7 @@ export function MarketingHeader() {
             <li>
               <ThemeToggle />
             </li>
-            <li className="ml-2 hidden lg:block">
+            <li className="ml-5 hidden lg:block">
               <SessionButton />
             </li>
             <li className="lg:hidden">
@@ -153,7 +153,6 @@ export function MarketingHeader() {
                   <Button
                     type="button"
                     variant="ghost"
-                    size="icon"
                   >
                     <MenuIcon className="rotate-0 scale-100 transition-transform group-data-[state=open]:-rotate-90 group-data-[state=open]:-scale-0" />
                     <XIcon className="absolute rotate-90 scale-0 transition-transform group-data-[state=open]:rotate-0 group-data-[state=open]:scale-100" />

@@ -1,17 +1,33 @@
 'use client'
 
 import { signOut } from 'next-auth/react'
-import { Button } from '@/components/ui/button'
+import {
+  Button,
+  ButtonDecoration,
+  ButtonLoadingIndicator,
+} from '@/components/ui/button'
+import { LogOutIcon } from 'lucide-react'
+import { useState } from 'react'
 
 export function SignOutButton() {
+  const [loading, setLoading] = useState(false)
+
   return (
     <Button
-      variant="destructive"
-      size="lg"
+      color="destructive"
+      size="large"
       type="button"
       className="mx-auto max-w-xs"
-      onClick={() => signOut()}
+      loading={loading}
+      onClick={() => {
+        setLoading(true)
+        void signOut()
+      }}
     >
+      <ButtonLoadingIndicator />
+      <ButtonDecoration>
+        <LogOutIcon />
+      </ButtonDecoration>
       Sign Out
     </Button>
   )

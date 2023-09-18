@@ -1,18 +1,31 @@
 'use client'
 
 import { signIn } from 'next-auth/react'
-import { Button } from '@/components/ui/button'
+import {
+  Button,
+  ButtonDecoration,
+  ButtonLoadingIndicator,
+} from '@/components/ui/button'
 import { GitHubIcon } from '@/components/icons'
+import { useState } from 'react'
 
 export function GitHubButton() {
+  const [loading, setLoading] = useState(false)
+
   return (
     <Button
       type="button"
-      variant="github"
-      onClick={() => signIn('github')}
+      loading={loading}
+      onClick={() => {
+        setLoading(true)
+        void signIn('github')
+      }}
     >
-      <GitHubIcon />
-      <span className="font-semibold">Continue with GitHub</span>
+      <ButtonLoadingIndicator />
+      <ButtonDecoration>
+        <GitHubIcon />
+      </ButtonDecoration>
+      Continue with GitHub
     </Button>
   )
 }

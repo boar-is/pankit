@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { cn } from '@/styles'
 import { useMounted } from '@/core/hooks'
+import { Button } from '@/components/ui/button'
 
 export default function ThemeIndicator() {
   const mounted = useMounted()
@@ -11,18 +12,16 @@ export default function ThemeIndicator() {
   return (
     <div className="flex gap-2">
       {themes.map((t) => (
-        <button
+        <Button
           key={t}
           type="button"
+          variant="ghost"
           onClick={() => setTheme(t)}
-          className={cn(
-            'rounded-md border-2 bg-muted px-4 py-2 capitalize text-muted-foreground',
-            mounted && t === theme && 'border-primary',
-          )}
+          className={cn(mounted && t === theme && 'border-primary')}
           suppressHydrationWarning
         >
           {t}
-        </button>
+        </Button>
       ))}
     </div>
   )
