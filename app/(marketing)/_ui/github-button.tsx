@@ -5,11 +5,12 @@ import {
   Button,
   ButtonDecoration,
   ButtonLoadingIndicator,
+  type ButtonProps,
 } from '@shared/ui/button'
 import { useState } from 'react'
 import { GitHubIcon } from '@shared/ui/icons'
 
-export function GitHubButton() {
+export function GitHubButton(props: ButtonProps) {
   const [loading, setLoading] = useState(false)
 
   return (
@@ -20,6 +21,7 @@ export function GitHubButton() {
         setLoading(true)
         void signIn('github')
       }}
+      {...props}
     >
       <ButtonLoadingIndicator />
       <ButtonDecoration>

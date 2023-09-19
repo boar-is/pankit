@@ -11,6 +11,7 @@ import {
 import { Slot } from '@radix-ui/react-slot'
 import { Loader2Icon } from 'lucide-react'
 import { type PropsWithAsChild } from '@shared/lib/types'
+import { cn } from '@shared/lib/utils'
 
 export const buttonVariants = tv({
   base: 'inline-flex select-none items-center justify-center border border-transparent font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -51,7 +52,7 @@ export const buttonVariants = tv({
     {
       color: 'default',
       variant: 'outline',
-      className: 'border-foreground',
+      className: 'border-foreground/10',
     },
     {
       color: 'default',
@@ -161,20 +162,18 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = 'Button'
 
-export const buttonDecorationVariants = tv({
-  base: 'h-[1em] w-[1em]',
-})
+export type ButtonDecorationProps = HTMLAttributes<HTMLDivElement> & {
+  hideOnDefault?: boolean
+  showOnLoading?: boolean
+}
 
-export type ButtonDecorationProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof buttonDecorationVariants> & {
-    hideOnDefault?: boolean
-    showOnLoading?: boolean
-  }
-
-export const ButtonDecoration = forwardRef<
-  HTMLDivElement,
-  ButtonDecorationProps
->(({ hideOnDefault, showOnLoading, className, children, ...props }, ref) => {
+export function ButtonDecoration({
+  hideOnDefault,
+  showOnLoading,
+  className,
+  children,
+  ...props
+}: ButtonDecorationProps) {
   const { loading } = useButtonContext()
 
   if (loading ? !showOnLoading : hideOnDefault) {
@@ -183,24 +182,22 @@ export const ButtonDecoration = forwardRef<
 
   return (
     <Slot
-      className={buttonDecorationVariants({ className })}
-      ref={ref}
+      className={cn('h-[1em] w-[1em]', { className })}
       {...props}
     >
       {children}
     </Slot>
   )
-})
-ButtonDecoration.displayName = 'ButtonDecorationProps'
+}
 
-export const ButtonLoadingIndicator = () => {
+export function ButtonLoadingIndicator(props: ButtonDecorationProps) {
   return (
     <ButtonDecoration
       showOnLoading
       hideOnDefault
+      {...props}
     >
       <Loader2Icon className="animate-spin" />
     </ButtonDecoration>
   )
 }
-ButtonLoadingIndicator.displayName = 'ButtonLoadingIndicator'

@@ -19,6 +19,8 @@ export const initials = (fullName?: string | null) => {
   }, '')
 }
 
+export const vr = (variable: string) => `var(${variable})`
+
 export const hexToRgb = (hex: string, delimiter = ' ') =>
   hex
     .replace(

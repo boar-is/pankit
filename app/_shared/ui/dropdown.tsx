@@ -9,7 +9,7 @@ import {
 } from 'react'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
-import { Slot } from '@radix-ui/react-slot'
+import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { cn } from '@shared/lib/utils'
 
@@ -50,14 +50,14 @@ DropdownMenuSubTrigger.displayName =
 export const dropdownMenuContentVariants = tv({
   base: 'z-50 min-w-[10rem] overflow-hidden rounded-xl border bg-popover/80 p-1 font-medium text-popover-foreground shadow-md backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
 })
-export type DropDownMenuContentVariantsProps = VariantProps<
+export type DropDownMenuContentVariantProps = VariantProps<
   typeof dropdownMenuContentVariants
 >
 
 export const DropdownMenuContent = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> &
-    DropDownMenuContentVariantsProps
+    DropDownMenuContentVariantProps
 >(({ className, sideOffset = 4, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.Portal>
@@ -75,7 +75,7 @@ DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
 export const DropdownMenuSubContent = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.SubContent>,
   ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent> &
-    DropDownMenuContentVariantsProps
+    DropDownMenuContentVariantProps
 >(({ className, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.SubContent
@@ -182,24 +182,19 @@ export const DropdownMenuSeparator = forwardRef<
 ))
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
-export const DropdownMenuIcon = forwardRef<
-  HTMLDivElement,
-  HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+export function DropdownMenuIcon({ className, ...props }: SlotProps) {
   return (
     <Slot
-      ref={ref}
       className={cn('h-4 w-4', className)}
       {...props}
     />
   )
-})
-DropdownMenuIcon.displayName = 'DropdownMenuIcon'
+}
 
-export const DropdownMenuShortcut = ({
+export function DropdownMenuShortcut({
   className,
   ...props
-}: HTMLAttributes<HTMLSpanElement>) => {
+}: HTMLAttributes<HTMLSpanElement>) {
   return (
     <span
       className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
@@ -207,4 +202,3 @@ export const DropdownMenuShortcut = ({
     />
   )
 }
-DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'

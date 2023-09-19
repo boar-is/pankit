@@ -1,7 +1,7 @@
-export interface PropsWithClassName {
+export type PropsWithClassName = {
   className?: string
 }
 
-export interface PropsWithAsChild {
+export type PropsWithAsChild = {
   asChild?: boolean
 }
