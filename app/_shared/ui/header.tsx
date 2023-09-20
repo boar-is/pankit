@@ -23,7 +23,7 @@ export function HeaderContainer({
   return (
     <div
       className={cn(
-        'container flex items-center justify-between gap-8 py-2 lg:py-4 xl:gap-12',
+        'container flex w-full items-center justify-between gap-8 py-2 lg:py-4 xl:gap-12',
         { className },
       )}
       {...props}
