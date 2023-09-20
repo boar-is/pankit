@@ -4,18 +4,22 @@ import { type PropsWithChildren } from 'react'
 import { cn } from '@shared/lib/utils'
 import { type PropsWithClassName } from '@shared/lib/types'
 
-type IconWrapperProps = PropsWithClassName &
+export type IconWrapperProps = PropsWithClassName &
   PropsWithChildren & {
     viewBox: string
   }
 
-type IconProps = PropsWithClassName
+export type IconProps = PropsWithClassName
 
-function IconWrapper({ viewBox, className, children }: IconWrapperProps) {
+export function IconWrapper({
+  viewBox,
+  className,
+  children,
+}: IconWrapperProps) {
   return (
     <svg
       viewBox={viewBox}
-      className={cn('flex-no-shrink h-5 w-5 fill-current', className)}
+      className={cn('flex-no-shrink inline h-5 w-5 fill-current', className)}
     >
       {children}
     </svg>
@@ -170,6 +174,24 @@ export function StripeIcon(props: IconProps) {
     >
       <title>Stripe</title>
       <path d="M16.5 4C10.7 4 7 7.1 7 12c0 4.7 4.3 6.1 7.1 7 1.3.5 2.9 1 2.9 1.5 0 .4-1 .5-1.5.5-2 0-4.8-.8-7-1.9L7 18.4v7.8l.6.2c2.4 1 5.1 1.6 7.6 1.6 6.1 0 9.8-2.8 9.8-7.6 0-5.2-4.4-6.6-7.3-7.5-1-.4-2.7-.9-2.7-1.3 0-.3 0-.6 1.2-.6 1.9 0 4.5.8 6.3 1.9l1.5.9V5.5l-.6-.2C21.2 4.5 18.8 4 16.5 4zm0 2c1.8 0 3.7.3 5.5 1v3.4A14 14 0 0 0 16.2 9c-2.9 0-3.2 1.8-3.2 2.6 0 1.9 2 2.5 4 3.2 3.5 1 6 2.1 6 5.6 0 5-5.5 5.6-7.8 5.6-2 0-4.2-.4-6.2-1.2v-3.3a19 19 0 0 0 6.5 1.5c3 0 3.5-1.5 3.5-2.5 0-2-2-2.6-4.2-3.3C11.4 16 9 15 9 11.9 9 8.3 11.9 6 16.5 6z" />
+    </IconWrapper>
+  )
+}
+
+export function UkrainianFlagIcon(props: IconProps) {
+  return (
+    <IconWrapper
+      viewBox="0 0 30 30"
+      {...props}
+    >
+      <path
+        className="fill-blue-500"
+        d="M24 6H5C4 6 3 7 3 9v6h24V9c0-2-1-3-3-3Zm0 0"
+      />
+      <path
+        className="fill-yellow-400"
+        d="M27 21c0 2-1 3-3 3H5c-1 0-2-1-2-3v-6h24Zm0 0"
+      />
     </IconWrapper>
   )
 }
