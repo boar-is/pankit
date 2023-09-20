@@ -18,10 +18,7 @@ export function GoToDashboardButton({
       asChild
       {...props}
     >
-      <Link
-        href="/dashboard"
-        className="flex gap-2"
-      >
+      <Link href="/dashboard">
         <ButtonDecoration>
           <Avatar className="h-6 w-6">
             {image && (

@@ -19,10 +19,7 @@ export function BrandLogo({
 }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn(
-        'relative flex h-8 w-8 overflow-hidden rounded-lg',
-        className,
-      )}
+      className={cn('relative h-8 w-8 overflow-hidden rounded-lg', className)}
       {...props}
     />
   )
