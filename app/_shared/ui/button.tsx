@@ -30,7 +30,7 @@ export const buttonVariants = tv({
     size: {
       small: 'gap-1 rounded px-3 py-1 text-xs',
       medium: 'gap-1.5 rounded-md px-4 py-2 text-sm',
-      large: 'gap-2 rounded-lg px-6 py-1.5 text-lg',
+      large: 'gap-2 rounded-lg px-6 py-1.5 text-lg sm:py-3',
     },
   },
   compoundVariants: [

@@ -20,7 +20,7 @@ import {
 
 export function Hero() {
   return (
-    <article className="space-y-10">
+    <article className="space-y-8 sm:space-y-12">
       <header>
         <hgroup className="container space-y-4 sm:max-w-xl">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">
