@@ -15,7 +15,6 @@ export function GoToDashboardButton({
 }: GoToDashboardButtonProps) {
   return (
     <Button
-      className="w-full"
       asChild
       {...props}
     >

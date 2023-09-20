@@ -12,7 +12,7 @@ export function InfiniteSlider({
 }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('flex flex-nowrap overflow-hidden', className)}
+      className={cn('flex max-w-full flex-nowrap overflow-hidden', className)}
       {...props}
     >
       {children}
@@ -41,10 +41,7 @@ export function InfiniteSliderList({
 
   return (
     <ul
-      className={cn(
-        'flex animate-infinite-slide items-center justify-center md:justify-start [&_li]:mx-4',
-        className,
-      )}
+      className={cn('flex animate-infinite-slide [&_li]:mx-4', className)}
       style={{
         animationDuration,
       }}

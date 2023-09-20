@@ -20,35 +20,39 @@ import {
 
 export function Hero() {
   return (
-    <article className="flex flex-col gap-10">
+    <article className="space-y-10">
       <header>
-        <hgroup className="container flex flex-col gap-4">
-          <h1 className="text-4xl font-extrabold tracking-tight">
+        <hgroup className="container max-w-xl space-y-4">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">
             The{' '}
-            <span className="relative text-highlight-blue-foreground before:absolute before:-inset-1 before:z-[-1] before:skew-x-[-20deg]  before:bg-highlight-blue">
+            <span className="relative italic text-highlight-blue-foreground before:absolute before:inset-0 before:inset-x-[-0.25em] before:left-[-0.1em] before:z-[-1] before:skew-x-[-14deg] before:bg-highlight-blue">
               DXiest
             </span>{' '}
             Starter Kit for Next.js
           </h1>
-          <p className="prose-lg font-medium text-muted-foreground">
+          <p className="prose-lg font-medium text-muted-foreground md:prose-xl">
             Focus on developing your idea,
             <br /> instead of configuring up the project
           </p>
         </hgroup>
       </header>
-      <menu className="container flex flex-col gap-4">
-        <SessionButton size="large" />
+      <menu className="container flex flex-col gap-3 md:max-w-xl md:flex-row md:justify-center">
+        <SessionButton
+          className="w-full"
+          size="large"
+        />
         <GithubRepoLink
+          className="w-full"
           variant="outline"
           size="large"
         />
       </menu>
-      <footer className="flex flex-col items-center gap-3">
-        <p className="text-sm font-semibold uppercase text-muted-foreground">
+      <footer className="container max-w-xl space-y-3">
+        <p className="text-center text-sm font-semibold uppercase text-muted-foreground">
           Connecting techs:
         </p>
         <Fader
-          className="w-full max-w-lg"
+          className="w-full"
           color="background"
         >
           <InfiniteSlider>
