@@ -16,7 +16,7 @@ export function PoweredByVercelBanner({
     >
       <IconWrapper
         className={cn('h-[44px] w-[212px]', className)}
-        viewBox="212 44"
+        viewBox="0 0 212 44"
         {...props}
       >
         <rect

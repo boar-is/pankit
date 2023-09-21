@@ -18,7 +18,7 @@ export function BuiltByBanner({
       {...props}
     >
       <UkrainianFlagIcon className="h-5 w-5" />
-      <div className="-my-2 w-[1px] self-stretch bg-[#5E5E5E]" />
+      <div className="-my-2 w-px self-stretch bg-[#5E5E5E]" />
       <span className="tracking-wide">
         Built by <span className="font-medium">Boris Zubchenko</span>
       </span>

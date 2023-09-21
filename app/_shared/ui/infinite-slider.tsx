@@ -3,7 +3,7 @@
 import { Children, type HTMLAttributes } from 'react'
 import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { cn } from '@shared/lib/utils'
-import { useMounted } from '@shared/ui/hooks'
+import { useMounted } from '@shared/lib/hooks'
 
 export function InfiniteSlider({
   className,
@@ -37,7 +37,10 @@ export function InfiniteSliderList({
     return null
   }
 
-  const length = Math.round(fillAmount / 2 / Children.count(children))
+  const length = Math.max(
+    1,
+    Math.round(fillAmount / 2 / Children.count(children)),
+  )
 
   return (
     <ul

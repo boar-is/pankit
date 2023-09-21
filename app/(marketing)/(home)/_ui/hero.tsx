@@ -1,5 +1,5 @@
 import { SessionButton } from '@marketing/_ui/session-button'
-import { GithubRepoLink } from '@marketing/_ui/github-repo-link'
+import { GithubRepoLink } from '@marketing/(home)/_ui/github-repo-link'
 import {
   InfiniteSlider,
   InfiniteSliderItem,
@@ -9,13 +9,15 @@ import { Fader } from '@shared/ui/fader'
 import {
   EsLintIcon,
   NextIcon,
+  NextraIcon,
   PrettierIcon,
   PrismaIcon,
   ReactIcon,
   StripeIcon,
+  T3Icon,
   TailwindIcon,
   TypeScriptIcon,
-  VercelIcon,
+  VercelEdgeIcon,
 } from '@shared/ui/icons'
 
 export function Hero() {
@@ -82,10 +84,16 @@ export function Hero() {
                 <PrettierIcon />
               </InfiniteSliderItem>
               <InfiniteSliderItem>
-                <VercelIcon />
+                <VercelEdgeIcon />
               </InfiniteSliderItem>
               <InfiniteSliderItem>
                 <StripeIcon />
+              </InfiniteSliderItem>
+              <InfiniteSliderItem>
+                <T3Icon />
+              </InfiniteSliderItem>
+              <InfiniteSliderItem>
+                <NextraIcon />
               </InfiniteSliderItem>
             </InfiniteSliderList>
           </InfiniteSlider>

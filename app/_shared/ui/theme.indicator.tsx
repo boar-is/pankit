@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { useMounted } from '@/app/_shared/ui/hooks'
+import { useMounted } from '@shared/lib/hooks'
 import { Button } from '@shared/ui/button'
 import { cn } from '@shared/lib/utils'
 
