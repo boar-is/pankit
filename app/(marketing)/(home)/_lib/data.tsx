@@ -29,6 +29,7 @@ type FeatureSection = {
   items: Array<{
     icon: ReactNode
     title: string
+    comingSoon?: boolean
     content: ReactNode
   }>
 }
@@ -40,10 +41,10 @@ export const featureSections: FeatureSection[] = [
     spotlightColor: 'blue',
     items: [
       {
-        icon: <BoxIcon className="sm:h-32 sm:w-32" />,
+        icon: <BoxIcon className="md:h-32 md:w-32" />,
         title: 'App Router',
         content: (
-          <p>
+          <p className="md:max-w-sm">
             Built on <em>React Server Components</em>, which supports shared
             layouts, nested routing, loading states, error handling, and more.
           </p>
@@ -52,6 +53,7 @@ export const featureSections: FeatureSection[] = [
       {
         icon: <VercelEdgeIcon />,
         title: 'Multi-Tenancy',
+        comingSoon: true,
         content: (
           <p>
             Custom domains, subdomains, and SSL certificates using the{' '}
@@ -62,6 +64,7 @@ export const featureSections: FeatureSection[] = [
       {
         icon: <ShieldIcon />,
         title: 'Rate-Limiting',
+        comingSoon: true,
         content: (
           <p>
             Prevent DoS attacks and limit web scraping using <em>Upstash</em>.
@@ -100,7 +103,7 @@ export const featureSections: FeatureSection[] = [
         ),
       },
       {
-        icon: <TailwindIcon className="sm:h-32 sm:w-32" />,
+        icon: <TailwindIcon className="md:h-32 md:w-32" />,
         title: 'Tailwind Variants',
         content: (
           <p>
@@ -187,6 +190,7 @@ export const featureSections: FeatureSection[] = [
       {
         icon: <NextraIcon />,
         title: 'Docs',
+        comingSoon: true,
         content: (
           <p>
             Build content focused docs with Nextra, plus extra power to create{' '}
@@ -198,6 +202,7 @@ export const featureSections: FeatureSection[] = [
       {
         icon: <EditIcon />,
         title: 'Blog',
+        comingSoon: true,
         content: (
           <p>
             Write blog posts using <em>Plate</em> and <em>Slate</em>, an
@@ -208,6 +213,7 @@ export const featureSections: FeatureSection[] = [
       {
         icon: <StripeIcon />,
         title: 'Subscriptions',
+        comingSoon: true,
         content: (
           <p>
             Free and paid subscriptions using <em>Stripe</em>.

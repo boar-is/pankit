@@ -59,7 +59,9 @@ export function InfiniteSliderList({
 
 export const InfiniteSliderItem = ({ className, ...props }: SlotProps) => (
   <Slot
-    className={cn('h-8 w-8 text-muted-foreground', { className })}
+    className={cn('h-8 w-8 text-muted-foreground md:h-10 md:w-10', {
+      className,
+    })}
     {...props}
   />
 )

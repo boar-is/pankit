@@ -4,7 +4,7 @@ import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 export const bentoGridVariants = tv({
-  base: 'grid gap-4 sm:gap-6',
+  base: 'grid gap-4 md:gap-6',
   variants: {
     variant: {
       1: 'grid-cols-5 grid-rows-3',
@@ -17,7 +17,7 @@ export const bentoGridVariants = tv({
 export type BentoGridVariantProps = VariantProps<typeof bentoGridVariants>
 
 export const bentoItemVariants = tv({
-  base: 'col-span-full rounded-2xl border border-accent bg-gradient-to-br from-accent to-transparent p-4 text-accent-foreground shadow-lg shadow-black/5 sm:rounded-3xl sm:p-8',
+  base: 'col-span-full rounded-2xl border border-accent bg-gradient-to-br from-accent to-transparent p-4 text-accent-foreground shadow-lg shadow-black/5 md:rounded-3xl md:p-8',
   variants: {
     variant: {
       1: '',
@@ -37,82 +37,82 @@ export const bentoItemVariants = tv({
     {
       variant: 1,
       index: 0,
-      className: 'sm:col-span-3 sm:row-span-2',
+      className: 'md:col-span-3 md:row-span-2',
     },
     {
       variant: 1,
       index: 1,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
     {
       variant: 1,
       index: 2,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
     {
       variant: 1,
       index: 3,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
     {
       variant: 1,
       index: 4,
-      className: 'sm:col-span-3 sm:row-span-1',
+      className: 'md:col-span-3 md:row-span-1',
     },
     {
       variant: 2,
       index: 0,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
     {
       variant: 2,
       index: 1,
-      className: 'sm:col-span-1 sm:row-span-2',
+      className: 'md:col-span-1 md:row-span-2',
     },
     {
       variant: 2,
       index: 2,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
     {
       variant: 3,
       index: 0,
-      className: 'sm:col-span-2',
+      className: 'md:col-span-2',
     },
     {
       variant: 3,
       index: 1,
-      className: 'sm:col-span-1',
+      className: 'md:col-span-1',
     },
     {
       variant: 3,
       index: 2,
-      className: 'sm:col-span-full',
+      className: 'md:col-span-full',
     },
     {
       variant: 3,
       index: 3,
-      className: 'sm:col-span-1',
+      className: 'md:col-span-1',
     },
     {
       variant: 3,
       index: 4,
-      className: 'sm:col-span-2',
+      className: 'md:col-span-2',
     },
     {
       variant: 4,
       index: 0,
-      className: 'sm:col-span-1 sm:row-span-2',
+      className: 'md:col-span-1 md:row-span-2',
     },
     {
       variant: 4,
       index: 1,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
     {
       variant: 4,
       index: 2,
-      className: 'sm:col-span-2 sm:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
   ],
 })
@@ -147,7 +147,7 @@ export function BentoItem({
   return (
     <div
       className={cn(
-        'flex flex-col justify-center space-y-2 sm:items-center',
+        'flex flex-col justify-center space-y-2 md:items-center',
         className,
       )}
       {...props}
@@ -159,7 +159,7 @@ export function BentoItemIcon({ className, ...props }: SlotProps) {
   return (
     <Slot
       className={cn(
-        'h-8 w-8 text-muted-foreground/50 sm:h-16 sm:w-16',
+        'h-8 w-8 text-muted-foreground/50 md:h-16 md:w-16',
         className,
       )}
       {...props}
@@ -173,7 +173,7 @@ export function BentoItemHeader({
 }: HTMLAttributes<HTMLDivElement>) {
   return (
     <header
-      className={cn('flex flex-row items-center gap-3 sm:flex-col', className)}
+      className={cn('flex flex-row items-center gap-3 md:flex-col', className)}
       {...props}
     ></header>
   )
@@ -183,7 +183,7 @@ export function BentoItemTitle({ className, ...props }: SlotProps) {
   return (
     <Slot
       className={cn(
-        'text-2xl font-semibold capitalize tracking-tight opacity-90 sm:text-center sm:text-3xl',
+        'text-2xl font-semibold capitalize tracking-tight opacity-90 md:text-center md:text-3xl',
         className,
       )}
       {...props}
@@ -198,7 +198,7 @@ export function BentoItemContent({
   return (
     <div
       className={cn(
-        'prose-sm font-medium text-muted-foreground/90 sm:prose sm:text-center',
+        'prose-sm font-medium text-muted-foreground/90 md:prose md:text-center',
         className,
       )}
       {...props}

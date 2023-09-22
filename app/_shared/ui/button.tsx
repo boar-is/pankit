@@ -11,7 +11,7 @@ import {
 import { Slot } from '@radix-ui/react-slot'
 import { Loader2Icon } from 'lucide-react'
 import { type PropsWithAsChild } from '@shared/lib/types'
-import { cn } from '@shared/lib/utils'
+import { InlineDecoration } from '@shared/ui/inline-decoration'
 
 export const buttonVariants = tv({
   base: 'inline-flex select-none items-center justify-center border border-transparent font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -30,7 +30,7 @@ export const buttonVariants = tv({
     size: {
       small: 'gap-1 rounded px-3 py-1 text-xs',
       medium: 'gap-1.5 rounded-md px-4 py-2 text-sm',
-      large: 'gap-2 rounded-lg px-6 py-1.5 text-lg sm:py-3',
+      large: 'gap-2 rounded-lg px-6 py-1.5 text-lg md:py-3',
     },
   },
   compoundVariants: [
@@ -170,8 +170,6 @@ export type ButtonDecorationProps = HTMLAttributes<HTMLDivElement> & {
 export function ButtonDecoration({
   hideOnDefault,
   showOnLoading,
-  className,
-  children,
   ...props
 }: ButtonDecorationProps) {
   const { loading } = useButtonContext()
@@ -180,14 +178,7 @@ export function ButtonDecoration({
     return null
   }
 
-  return (
-    <Slot
-      className={cn('h-[1em] w-[1em]', { className })}
-      {...props}
-    >
-      {children}
-    </Slot>
-  )
+  return <InlineDecoration {...props} />
 }
 
 export function ButtonLoadingIndicator(props: ButtonDecorationProps) {

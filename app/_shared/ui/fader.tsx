@@ -16,6 +16,7 @@ export const faderVariants = tv({
   },
   defaultVariants: {
     orientation: 'horizontal',
+    color: 'background',
   },
 })
 

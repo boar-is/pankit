@@ -5,3 +5,7 @@ export type PropsWithClassName = {
 export type PropsWithAsChild = {
   asChild?: boolean
 }
+
+export type PropsWithAsParent = {
+  asParent?: boolean
+}
