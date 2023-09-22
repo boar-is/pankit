@@ -6,7 +6,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 import { type PropsWithAsParent } from '@shared/lib/types'
 
 const spotlightVariants = tv({
-  base: 'relative inset-0 transform-gpu overflow-hidden before:pointer-events-none before:absolute before:z-10 before:translate-x-[var(--spotlight-x)] before:translate-y-[var(--spotlight-y)] before:transform-gpu before:rounded-full before:bg-muted-foreground/5',
+  base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:transform-gpu before:rounded-full before:bg-muted-foreground/5',
   variants: {
     size: {
       large:
@@ -78,7 +78,7 @@ export function SpotlightItem({ className, ...props }: SlotProps) {
   const variantProps = useContext(SpotlightContext)
 
   return (
-    <div
+    <Slot
       className={spotlightVariants({ ...variantProps, className })}
       {...props}
     />
