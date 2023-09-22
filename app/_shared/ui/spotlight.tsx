@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useRef } from 'react'
+import { createContext, useEffect, useRef } from 'react'
 import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { type PropsWithAsParent } from '@shared/lib/types'
@@ -75,11 +75,11 @@ export function Spotlight({
 }
 
 export function SpotlightItem({ className, ...props }: SlotProps) {
-  const variantProps = useContext(SpotlightContext)
+  // const variantProps = useContext(SpotlightContext)
 
   return (
     <Slot
-      className={spotlightVariants({ ...variantProps, className })}
+      className={className}
       {...props}
     />
   )
