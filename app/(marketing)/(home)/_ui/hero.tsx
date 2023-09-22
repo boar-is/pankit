@@ -1,24 +1,5 @@
 import { SessionButton } from '@marketing/_ui/session-button'
 import { GithubRepoLink } from '@marketing/(home)/_ui/github-repo-link'
-import {
-  InfiniteSlider,
-  InfiniteSliderItem,
-  InfiniteSliderList,
-} from '@shared/ui/infinite-slider'
-import { Fader } from '@shared/ui/fader'
-import {
-  EsLintIcon,
-  NextIcon,
-  NextraIcon,
-  PrettierIcon,
-  PrismaIcon,
-  ReactIcon,
-  StripeIcon,
-  T3Icon,
-  TailwindIcon,
-  TypeScriptIcon,
-  VercelEdgeIcon,
-} from '@shared/ui/icons'
 
 export function Hero() {
   return (
@@ -53,51 +34,51 @@ export function Hero() {
         <p className="text-center text-sm font-semibold uppercase text-muted-foreground">
           Connecting techs:
         </p>
-        <Fader
-          className="w-full"
-          color="background"
-        >
-          <InfiniteSlider>
-            <InfiniteSliderList
-              fillAmount={10}
-              animationDuration="10s"
-            >
-              <InfiniteSliderItem>
-                <NextIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <ReactIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <TailwindIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <PrismaIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <EsLintIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <TypeScriptIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <PrettierIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <VercelEdgeIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <StripeIcon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <T3Icon />
-              </InfiniteSliderItem>
-              <InfiniteSliderItem>
-                <NextraIcon />
-              </InfiniteSliderItem>
-            </InfiniteSliderList>
-          </InfiniteSlider>
-        </Fader>
+        {/*<Fader*/}
+        {/*  className="w-full"*/}
+        {/*  color="background"*/}
+        {/*>*/}
+        {/*  <InfiniteSlider>*/}
+        {/*    <InfiniteSliderList*/}
+        {/*      fillAmount={10}*/}
+        {/*      animationDuration="10s"*/}
+        {/*    >*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <NextIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <ReactIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <TailwindIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <PrismaIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <EsLintIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <TypeScriptIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <PrettierIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <VercelEdgeIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <StripeIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <T3Icon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*      <InfiniteSliderItem>*/}
+        {/*        <NextraIcon />*/}
+        {/*      </InfiniteSliderItem>*/}
+        {/*    </InfiniteSliderList>*/}
+        {/*  </InfiniteSlider>*/}
+        {/*</Fader>*/}
       </footer>
     </article>
   )
