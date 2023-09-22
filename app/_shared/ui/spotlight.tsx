@@ -78,7 +78,7 @@ export function SpotlightItem({ className, ...props }: SlotProps) {
   const variantProps = useContext(SpotlightContext)
 
   return (
-    <Slot
+    <div
       className={spotlightVariants({ ...variantProps, className })}
       {...props}
     />
