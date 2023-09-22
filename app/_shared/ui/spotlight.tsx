@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useRef } from 'react'
+import { createContext, useContext, useRef } from 'react'
 import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { type PropsWithAsParent } from '@shared/lib/types'
@@ -37,32 +37,32 @@ export function Spotlight({
   const Comp = asParent ? 'div' : Slot
   const ref = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    let animationFrameId: number | null = null
-
-    function onMouseMove({ pageX, pageY }: MouseEvent) {
-      animationFrameId = requestAnimationFrame(() => {
-        Array.from(ref.current?.children ?? [])
-          .map((child) => child as HTMLElement)
-          .forEach((child) => {
-            child.style.setProperty(
-              '--spotlight-x',
-              `${pageX - child.offsetLeft}px`,
-            )
-            child.style.setProperty(
-              '--spotlight-y',
-              `${pageY - child.offsetTop}px`,
-            )
-          })
-      })
-    }
-
-    document.addEventListener('mousemove', onMouseMove)
-    return () => {
-      document.removeEventListener('mousemove', onMouseMove)
-      animationFrameId && cancelAnimationFrame(animationFrameId)
-    }
-  }, [ref])
+  // useEffect(() => {
+  //   let animationFrameId: number | null = null
+  //
+  //   function onMouseMove({ pageX, pageY }: MouseEvent) {
+  //     animationFrameId = requestAnimationFrame(() => {
+  //       Array.from(ref.current?.children ?? [])
+  //         .map((child) => child as HTMLElement)
+  //         .forEach((child) => {
+  //           child.style.setProperty(
+  //             '--spotlight-x',
+  //             `${pageX - child.offsetLeft}px`,
+  //           )
+  //           child.style.setProperty(
+  //             '--spotlight-y',
+  //             `${pageY - child.offsetTop}px`,
+  //           )
+  //         })
+  //     })
+  //   }
+  //
+  //   document.addEventListener('mousemove', onMouseMove)
+  //   return () => {
+  //     document.removeEventListener('mousemove', onMouseMove)
+  //     animationFrameId && cancelAnimationFrame(animationFrameId)
+  //   }
+  // }, [ref])
 
   return (
     <SpotlightContext.Provider value={{ color }}>
