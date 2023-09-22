@@ -5,7 +5,7 @@ import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const spotlightVariants = tv({
-  base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:translate-x-[var(--spotlight-x)] before:translate-y-[var(--spotlight-y)] before:rounded-full before:bg-muted-foreground/5',
+  base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:translate-x-[var(--spotlight-x)] before:translate-y-[var(--spotlight-y)] before:transform-gpu before:rounded-full before:bg-muted-foreground/5',
   variants: {
     size: {
       large:
