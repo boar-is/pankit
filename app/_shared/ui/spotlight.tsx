@@ -6,11 +6,11 @@ import { tv, type VariantProps } from 'tailwind-variants'
 import { type PropsWithAsParent } from '@shared/lib/types'
 
 const spotlightVariants = tv({
-  base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:rounded-full before:bg-muted-foreground/5 xl:before:translate-x-[var(--spotlight-x)] xl:before:translate-y-[var(--spotlight-y)] xl:before:transform-gpu',
+  base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:transform-gpu before:rounded-full before:bg-muted-foreground/5 xl:before:translate-x-[var(--spotlight-x)] xl:before:translate-y-[var(--spotlight-y)]',
   variants: {
     size: {
       large:
-        'before:left-[-800px] before:top-[-800px] before:h-[1600px] before:w-[1600px] before:blur-[200px]',
+        'before:left-[-200px] before:top-[-200px] before:h-[400px] before:w-[400px] before:blur-[200px] xl:before:left-[-800px] xl:before:top-[-800px] xl:before:h-[1600px] xl:before:w-[1600px] xl:before:blur-[200px]',
     },
     color: {
       blue: 'before:bg-highlight-blue/20 before:dark:bg-highlight-blue/10',
