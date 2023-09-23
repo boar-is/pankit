@@ -27,7 +27,7 @@ export function PricingPlan({
   return (
     <div
       className={cn(
-        'flex w-full max-w-sm flex-col gap-8 rounded-3xl border border-foreground/5 bg-gradient-to-br from-muted to-transparent p-6 shadow-md shadow-black/5 dark:border-foreground/20',
+        'flex w-full max-w-sm flex-col gap-12 rounded-3xl border border-foreground/5 bg-gradient-to-br from-muted to-transparent p-6 shadow-md shadow-black/5 dark:border-foreground/20',
         className,
       )}
       {...props}
@@ -41,7 +41,7 @@ export function PricingPlanHeader({
 }: HTMLAttributes<HTMLDivElement>) {
   return (
     <header
-      className={cn('space-y-2', className)}
+      className={cn('space-y-4', className)}
       {...props}
     />
   )
