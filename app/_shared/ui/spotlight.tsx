@@ -7,7 +7,7 @@ import { type PropsWithAsParent } from '@shared/lib/types'
 import { cn } from '@shared/lib/utils'
 
 const spotlightItemVariants = tv({
-  base: 'fix before:fix relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:transform-gpu before:rounded-full before:bg-muted-foreground/5 md:before:translate-x-[var(--spotlight-x)] md:before:translate-y-[var(--spotlight-y)]',
+  base: 'fix before:fix relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:!transform-gpu before:rounded-full before:bg-muted-foreground/5 md:before:translate-x-[var(--spotlight-x)] md:before:translate-y-[var(--spotlight-y)]',
   variants: {
     size: {
       medium:
