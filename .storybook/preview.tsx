@@ -1,6 +1,9 @@
+import '@/app/globals.css'
 import './index.css'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import { type Preview, type ReactRenderer } from '@storybook/react'
+import { cn } from '@shared/lib/utils'
+import { variables } from '@shared/lib/fonts'
 
 const preview = {
   parameters: {
@@ -20,6 +23,16 @@ const preview = {
       },
       defaultTheme: 'light',
     }),
+    (Story) => (
+      <div
+        className={cn(
+          'min-h-screen bg-background p-4 font-base text-foreground antialiased',
+          variables,
+        )}
+      >
+        <Story />
+      </div>
+    ),
   ],
 } satisfies Preview
 
