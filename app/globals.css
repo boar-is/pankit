@@ -38,8 +38,8 @@
   [type='radio']:focus {
     @apply border-border ring-ring ring-offset-primary;
   }
-}
 
-.fix {
-  -webkit-backface-visibility: hidden;
+  [data-sonner-toaster][data-sonner-toaster] li {
+    @apply rounded-2xl bg-muted/50 font-medium text-foreground backdrop-blur-md;
+  }
 }

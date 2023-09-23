@@ -5,7 +5,6 @@ import {
   PricingPlanFeatureItem,
   PricingPlanFeatureList,
   PricingPlanFooter,
-  PricingPlanFooterButton,
   PricingPlanHeader,
   PricingPlanList,
   PricingPlanPrice,
@@ -15,8 +14,10 @@ import {
 } from '@marketing/pricing/_ui/pricing-plan'
 import { Badge } from '@shared/ui/badge'
 import { Spotlight, SpotlightItem } from '@shared/ui/spotlight'
+import { DataPricingPlanFooterButton } from '@marketing/pricing/_ui/data-pricing-plan-footer-button'
+import { cn } from '@shared/lib/utils'
 
-const priceByFrequency = {
+export const priceByFrequency = {
   hobby: {
     monthly: {
       value: '$0',
@@ -49,16 +50,18 @@ const priceByFrequency = {
   },
 }
 
-type PaymentFrequency = 'monthly' | 'annually'
+export type PaymentFrequency = 'monthly' | 'annually'
 
 export type DataPricingPlanListProps = {
   frequency: PaymentFrequency
 }
 
 export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
+  const color = frequency === 'annually' ? 'blue' : 'green'
+
   return (
     <Spotlight
-      color="blue"
+      color={color}
       size="large"
     >
       <PricingPlanList>
@@ -104,21 +107,33 @@ export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
               </PricingPlanFeatureList>
             </PricingPlanContent>
             <PricingPlanFooter>
-              <PricingPlanFooterButton variant="outline">
+              <DataPricingPlanFooterButton
+                variant="outline"
+                frequency={frequency}
+                plan="hobby"
+              >
                 Start building
-              </PricingPlanFooterButton>
+              </DataPricingPlanFooterButton>
             </PricingPlanFooter>
           </PricingPlan>
         </SpotlightItem>
         <SpotlightItem>
-          <PricingPlan className="border border-highlight-blue-content dark:border-highlight-blue">
+          <PricingPlan
+            className={cn(
+              'border',
+              color === 'blue' &&
+                'border-highlight-blue-content dark:border-highlight-blue',
+              color === 'green' &&
+                'border-highlight-green-content dark:border-highlight-green',
+            )}
+          >
             <PricingPlanHeader>
               <PricingPlanTitle>
                 <h2 className="flex justify-between">
                   Pro
                   <Badge
                     variant="subtle"
-                    color="blue"
+                    color={color}
                   >
                     Most Popular
                   </Badge>
@@ -156,9 +171,13 @@ export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
               </PricingPlanFeatureList>
             </PricingPlanContent>
             <PricingPlanFooter>
-              <PricingPlanFooterButton variant="solid">
+              <DataPricingPlanFooterButton
+                variant="solid"
+                frequency={frequency}
+                plan="pro"
+              >
                 Go Pro
-              </PricingPlanFooterButton>
+              </DataPricingPlanFooterButton>
             </PricingPlanFooter>
           </PricingPlan>
         </SpotlightItem>
@@ -189,9 +208,13 @@ export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
               </PricingPlanFeatureList>
             </PricingPlanContent>
             <PricingPlanFooter>
-              <PricingPlanFooterButton variant="outline">
+              <DataPricingPlanFooterButton
+                variant="outline"
+                frequency={frequency}
+                plan="lifelong"
+              >
                 Contact Sales
-              </PricingPlanFooterButton>
+              </DataPricingPlanFooterButton>
             </PricingPlanFooter>
           </PricingPlan>
         </SpotlightItem>

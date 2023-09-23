@@ -4,10 +4,9 @@ import { createContext, useContext, useEffect, useRef } from 'react'
 import { Slot, type SlotProps } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { type PropsWithAsParent } from '@shared/lib/types'
-import { cn } from '@shared/lib/utils'
 
 const spotlightItemVariants = tv({
-  base: 'fix before:fix relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:!transform-gpu before:rounded-full before:bg-muted-foreground/5 md:before:translate-x-[var(--spotlight-x)] md:before:translate-y-[var(--spotlight-y)]',
+  base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:!transform-gpu before:rounded-full before:bg-muted-foreground/5 lg:before:translate-x-[var(--spotlight-x)] lg:before:translate-y-[var(--spotlight-y)]',
   variants: {
     size: {
       medium:
@@ -35,7 +34,6 @@ const SpotlightContext = createContext<SpotlightVariantProps>({})
 export function Spotlight({
   color,
   size,
-  className,
   asParent,
   ...props
 }: SlotProps & SpotlightVariantProps & PropsWithAsParent) {
@@ -72,7 +70,6 @@ export function Spotlight({
   return (
     <SpotlightContext.Provider value={{ size, color }}>
       <Comp
-        className={cn('fix before:fix', className)}
         ref={ref}
         {...props}
       />

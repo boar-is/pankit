@@ -150,7 +150,7 @@ export function PricingPlanFeatureItem({
       )}
       {...props}
     >
-      <aside className="rounded-full bg-foreground p-0.5 text-background">
+      <aside className="rounded-full bg-foreground/90 p-0.5 text-background">
         <CheckIcon className="h-3 w-3" />
       </aside>
       <div>{children}</div>

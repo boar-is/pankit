@@ -1,5 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shared/ui/tabs'
 import { DataPricingPlanList } from '@marketing/pricing/_ui/data-pricing-plan-list'
+import { Alert, AlertDecoration } from '@shared/ui/alert'
+import { AlertTriangle } from 'lucide-react'
 
 export default async function Page() {
   return (
@@ -7,14 +9,27 @@ export default async function Page() {
       <article className="flex flex-col gap-8">
         <header>
           <hgroup className="container text-center">
-            <h1 className="font-semibold text-highlight-blue-content">
+            <h1 className="font-semibold text-highlight-blue-content dark:text-highlight-blue md:text-3xl">
               Pricing
             </h1>
-            <p className="text-4xl font-bold tracking-tight">
+            <p className="text-4xl font-bold tracking-tight md:text-6xl">
               Find out which plan is right for you
             </p>
           </hgroup>
         </header>
+        <aside className="container">
+          <Alert
+            color="destructive"
+            variant="subtle"
+            size="large"
+            className="mx-auto max-w-fit"
+          >
+            <AlertDecoration>
+              <AlertTriangle />
+            </AlertDecoration>
+            PanKit is a demo app. You can test the upgrade and won`t be charged.
+          </Alert>
+        </aside>
         <Tabs
           defaultValue="annually"
           className="container"

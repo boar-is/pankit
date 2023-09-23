@@ -1,5 +1,3 @@
-'use client'
-
 import { tv, type VariantProps } from 'tailwind-variants'
 import { type HTMLAttributes } from 'react'
 import { InlineDecoration } from '@shared/ui/inline-decoration'
