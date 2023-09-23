@@ -62,51 +62,54 @@ export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
       size="medium"
     >
       <PricingPlanList>
-        <PricingPlan>
-          <PricingPlanHeader>
-            <PricingPlanTitle>
-              <h2>Hobby</h2>
-            </PricingPlanTitle>
-            <PricingPlanPrice>
-              <PricingPlanPriceValue>
-                {priceByFrequency.hobby[frequency].value}
-              </PricingPlanPriceValue>
-              <PricingPlanPriceDescription>
-                {priceByFrequency.hobby[frequency].description}
-              </PricingPlanPriceDescription>
-            </PricingPlanPrice>
-            <PricingPlanDescription>
-              Start your next side project
-            </PricingPlanDescription>
-          </PricingPlanHeader>
-          <PricingPlanContent>
-            <PricingPlanFeatureList>
-              <PricingPlanFeatureItem>
-                App Router with <em>Next.js</em>
-              </PricingPlanFeatureItem>
-              <PricingPlanFeatureItem>
-                Auth with <em>Auth.js</em>
-              </PricingPlanFeatureItem>
-              <PricingPlanFeatureItem>
-                Database with <em>Prisma</em> and <em>Vercel Postgres</em>
-              </PricingPlanFeatureItem>
-              <PricingPlanFeatureItem>
-                Component System with <em>Radix UI</em>
-              </PricingPlanFeatureItem>
-              <PricingPlanFeatureItem>
-                Strict Mode for <em>TypeScript</em> and <em>React</em>
-              </PricingPlanFeatureItem>
-              <PricingPlanFeatureItem>
-                Linters and Formatters via <em>ESLint</em> and <em>Prettier</em>
-              </PricingPlanFeatureItem>
-            </PricingPlanFeatureList>
-          </PricingPlanContent>
-          <PricingPlanFooter>
-            <PricingPlanFooterButton variant="outline">
-              Start building
-            </PricingPlanFooterButton>
-          </PricingPlanFooter>
-        </PricingPlan>
+        <SpotlightItem>
+          <PricingPlan>
+            <PricingPlanHeader>
+              <PricingPlanTitle>
+                <h2>Hobby</h2>
+              </PricingPlanTitle>
+              <PricingPlanPrice>
+                <PricingPlanPriceValue>
+                  {priceByFrequency.hobby[frequency].value}
+                </PricingPlanPriceValue>
+                <PricingPlanPriceDescription>
+                  {priceByFrequency.hobby[frequency].description}
+                </PricingPlanPriceDescription>
+              </PricingPlanPrice>
+              <PricingPlanDescription>
+                Start your next side project
+              </PricingPlanDescription>
+            </PricingPlanHeader>
+            <PricingPlanContent>
+              <PricingPlanFeatureList>
+                <PricingPlanFeatureItem>
+                  App Router with <em>Next.js</em>
+                </PricingPlanFeatureItem>
+                <PricingPlanFeatureItem>
+                  Auth with <em>Auth.js</em>
+                </PricingPlanFeatureItem>
+                <PricingPlanFeatureItem>
+                  Database with <em>Prisma</em> and <em>Vercel Postgres</em>
+                </PricingPlanFeatureItem>
+                <PricingPlanFeatureItem>
+                  Component System with <em>Radix UI</em>
+                </PricingPlanFeatureItem>
+                <PricingPlanFeatureItem>
+                  Strict Mode for <em>TypeScript</em> and <em>React</em>
+                </PricingPlanFeatureItem>
+                <PricingPlanFeatureItem>
+                  Linters and Formatters via <em>ESLint</em> and{' '}
+                  <em>Prettier</em>
+                </PricingPlanFeatureItem>
+              </PricingPlanFeatureList>
+            </PricingPlanContent>
+            <PricingPlanFooter>
+              <PricingPlanFooterButton variant="outline">
+                Start building
+              </PricingPlanFooterButton>
+            </PricingPlanFooter>
+          </PricingPlan>
+        </SpotlightItem>
         <SpotlightItem>
           <PricingPlan className="border border-highlight-blue-content dark:border-highlight-blue">
             <PricingPlanHeader>
@@ -159,37 +162,39 @@ export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
             </PricingPlanFooter>
           </PricingPlan>
         </SpotlightItem>
-        <PricingPlan>
-          <PricingPlanHeader>
-            <PricingPlanTitle>
-              <h2>Life-Long</h2>
-            </PricingPlanTitle>
-            <PricingPlanPrice>
-              <PricingPlanPriceValue>
-                {priceByFrequency.lifelong[frequency].value}
-              </PricingPlanPriceValue>
-              <PricingPlanPriceDescription>
-                {priceByFrequency.lifelong[frequency].description}
-              </PricingPlanPriceDescription>
-            </PricingPlanPrice>
-            <PricingPlanDescription>
-              Everything. Forever.
-            </PricingPlanDescription>
-          </PricingPlanHeader>
-          <PricingPlanContent>
-            <PricingPlanFeatureList>
-              <PricingPlanFeatureItem>
-                All features forever
-              </PricingPlanFeatureItem>
-              <PricingPlanFeatureItem>Premium Support</PricingPlanFeatureItem>
-            </PricingPlanFeatureList>
-          </PricingPlanContent>
-          <PricingPlanFooter>
-            <PricingPlanFooterButton variant="outline">
-              Contact Sales
-            </PricingPlanFooterButton>
-          </PricingPlanFooter>
-        </PricingPlan>
+        <SpotlightItem>
+          <PricingPlan>
+            <PricingPlanHeader>
+              <PricingPlanTitle>
+                <h2>Life-Long</h2>
+              </PricingPlanTitle>
+              <PricingPlanPrice>
+                <PricingPlanPriceValue>
+                  {priceByFrequency.lifelong[frequency].value}
+                </PricingPlanPriceValue>
+                <PricingPlanPriceDescription>
+                  {priceByFrequency.lifelong[frequency].description}
+                </PricingPlanPriceDescription>
+              </PricingPlanPrice>
+              <PricingPlanDescription>
+                Everything. Forever.
+              </PricingPlanDescription>
+            </PricingPlanHeader>
+            <PricingPlanContent>
+              <PricingPlanFeatureList>
+                <PricingPlanFeatureItem>
+                  All features forever
+                </PricingPlanFeatureItem>
+                <PricingPlanFeatureItem>Premium Support</PricingPlanFeatureItem>
+              </PricingPlanFeatureList>
+            </PricingPlanContent>
+            <PricingPlanFooter>
+              <PricingPlanFooterButton variant="outline">
+                Contact Sales
+              </PricingPlanFooterButton>
+            </PricingPlanFooter>
+          </PricingPlan>
+        </SpotlightItem>
       </PricingPlanList>
     </Spotlight>
   )
