@@ -9,8 +9,10 @@ const spotlightVariants = tv({
   base: 'relative inset-0 overflow-hidden before:pointer-events-none before:absolute before:z-10 before:transform-gpu before:rounded-full before:bg-muted-foreground/5 xl:before:translate-x-[var(--spotlight-x)] xl:before:translate-y-[var(--spotlight-y)]',
   variants: {
     size: {
+      medium:
+        'before:left-[-200px] before:top-[-200px] before:h-[400px] before:w-[400px] before:blur-[100px] xl:before:left-[-400px] xl:before:top-[-400px] xl:before:h-[800px] xl:before:w-[800px]',
       large:
-        'before:left-[-200px] before:top-[-200px] before:h-[400px] before:w-[400px] before:blur-[200px] xl:before:left-[-800px] xl:before:top-[-800px] xl:before:h-[1600px] xl:before:w-[1600px] xl:before:blur-[200px]',
+        'before:left-[-400px] before:top-[-400px] before:h-[800px] before:w-[800px] before:blur-[200px] xl:before:left-[-800px] xl:before:top-[-800px] xl:before:h-[1600px] xl:before:w-[1600px]',
     },
     color: {
       blue: 'before:bg-highlight-blue/20 before:dark:bg-highlight-blue/10',
@@ -31,6 +33,7 @@ const SpotlightContext = createContext<SpotlightVariantProps>({})
 
 export function Spotlight({
   color,
+  size,
   asParent,
   ...props
 }: SlotProps & SpotlightVariantProps & PropsWithAsParent) {
@@ -65,7 +68,7 @@ export function Spotlight({
   }, [ref])
 
   return (
-    <SpotlightContext.Provider value={{ color }}>
+    <SpotlightContext.Provider value={{ size, color }}>
       <Comp
         ref={ref}
         {...props}

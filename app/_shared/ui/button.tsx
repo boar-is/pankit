@@ -52,7 +52,7 @@ export const buttonVariants = tv({
     {
       color: 'default',
       variant: 'outline',
-      className: 'border-foreground/10',
+      className: 'border-foreground/10 dark:border-foreground/20',
     },
     {
       color: 'default',
