@@ -12,7 +12,7 @@ import { Badge } from '@shared/ui/badge'
 
 export function Features() {
   return (
-    <div className="py-16 md:py-32 lg:py-48">
+    <div className="py-16 md:py-32">
       <h2
         className="sr-only"
         id="features"
