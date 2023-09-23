@@ -59,7 +59,7 @@ export function DataPricingPlanList({ frequency }: DataPricingPlanListProps) {
   return (
     <Spotlight
       color="blue"
-      size="medium"
+      size="large"
     >
       <PricingPlanList>
         <SpotlightItem>

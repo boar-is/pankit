@@ -38,4 +38,10 @@
   [type='radio']:focus {
     @apply border-border ring-ring ring-offset-primary;
   }
+
+  .fix {
+    -webkit-backface-visibility: hidden !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+  }
 }
