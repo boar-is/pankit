@@ -2,6 +2,7 @@
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
+    "plugin:storybook/recommended",
     "plugin:@typescript-eslint/strict",
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended"
