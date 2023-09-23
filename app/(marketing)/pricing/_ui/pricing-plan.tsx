@@ -27,7 +27,7 @@ export function PricingPlan({
   return (
     <div
       className={cn(
-        'before:fix flex w-full max-w-sm flex-col gap-8 rounded-3xl border border-foreground/5 bg-gradient-to-br from-muted to-transparent p-6 shadow-md shadow-black/5 dark:border-foreground/20',
+        'flex w-full max-w-sm flex-col gap-8 rounded-3xl border border-foreground/5 bg-gradient-to-br from-muted to-transparent p-6 shadow-md shadow-black/5 dark:border-foreground/20',
         className,
       )}
       {...props}

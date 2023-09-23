@@ -90,7 +90,7 @@ export const featureSections: FeatureSection[] = [
   {
     title: 'Client Features',
     bentoVariant: 2,
-    spotlightColor: 'yellow',
+    spotlightColor: 'green',
     items: [
       {
         icon: <ReactIcon />,
@@ -185,7 +185,7 @@ export const featureSections: FeatureSection[] = [
   {
     title: 'UX Features',
     bentoVariant: 4,
-    spotlightColor: 'green',
+    spotlightColor: 'yellow',
     items: [
       {
         icon: <NextraIcon />,
