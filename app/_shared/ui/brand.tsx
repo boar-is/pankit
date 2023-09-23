@@ -1,7 +1,8 @@
 import { type HTMLAttributes } from 'react'
 import { cn } from '@shared/lib/utils'
 
-export function Brand({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+export type BrandProps = HTMLAttributes<HTMLDivElement>
+export function Brand({ className, ...props }: BrandProps) {
   return (
     <div
       className={cn(

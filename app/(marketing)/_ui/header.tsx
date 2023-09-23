@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import logoImage from '@/public/logo-180x180.webp'
 import { env } from '@/env.mjs'
 import { SessionButton } from '@/app/(marketing)/_ui/session-button'
 import {
@@ -24,7 +22,6 @@ import {
   ZapIcon,
 } from 'lucide-react'
 import { Header as SharedHeader, HeaderContainer } from '@shared/ui/header'
-import { Brand, BrandLogo, BrandName } from '@shared/ui/brand'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -34,24 +31,14 @@ import {
 import { Button } from '@shared/ui/button'
 import { GitHubIcon } from '@shared/ui/icons'
 import { ThemeToggle } from '@shared/ui/theme-toggle'
+import { BrandPanKit } from '@shared/ui/brand-pankit'
 
 export function Header() {
   return (
     <SharedHeader>
       <HeaderContainer>
         <Link href="/">
-          <Brand>
-            <BrandLogo>
-              <Image
-                src={logoImage}
-                alt="PanKit Logo"
-                priority
-                fill
-                className="object-cover"
-              />
-            </BrandLogo>
-            <BrandName>PanKit</BrandName>
-          </Brand>
+          <BrandPanKit />
         </Link>
         <NavigationMenu className="mr-auto hidden flex-1 text-muted-foreground lg:block">
           <NavigationMenuList>
