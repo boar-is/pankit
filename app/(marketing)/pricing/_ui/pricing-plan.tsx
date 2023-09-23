@@ -12,7 +12,7 @@ export function PricingPlanList({
   return (
     <div
       className={cn(
-        'grid max-w-fit grid-cols-1 grid-rows-3 gap-4 lg:mx-auto lg:grid-cols-3 lg:grid-rows-1',
+        'mx-auto grid max-w-fit grid-cols-1 grid-rows-3 gap-4 lg:grid-cols-3 lg:grid-rows-1',
         className,
       )}
       {...props}
