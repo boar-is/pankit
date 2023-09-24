@@ -26,7 +26,7 @@ const preview = {
     (Story) => (
       <div
         className={cn(
-          'min-h-screen bg-background p-4 font-base text-foreground antialiased',
+          'bg-background p-4 font-base text-foreground antialiased',
           variables,
         )}
       >
