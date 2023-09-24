@@ -1,7 +1,6 @@
 import '@/app/globals.css'
 import './index.css'
-import { withThemeByClassName } from '@storybook/addon-themes'
-import { type Preview, type ReactRenderer } from '@storybook/react'
+import { type Preview } from '@storybook/react'
 import { cn } from '@shared/lib/utils'
 import { variables } from '@shared/lib/fonts'
 
@@ -16,13 +15,6 @@ const preview = {
     },
   },
   decorators: [
-    withThemeByClassName<ReactRenderer>({
-      themes: {
-        light: 'light',
-        dark: 'dark',
-      },
-      defaultTheme: 'light',
-    }),
     (Story) => (
       <div
         className={cn(
