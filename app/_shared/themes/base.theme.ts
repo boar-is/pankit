@@ -1,7 +1,7 @@
 import { type ColorPalette, type Theme } from './types'
 import colors from 'tailwindcss/colors'
 // noinspection ES6PreferShortImport
-import { hexToRgb } from '../app/_shared/lib/utils'
+import { hexToRgb } from '../lib/utils'
 
 export const baseTheme = ({
   gray,

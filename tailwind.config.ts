@@ -5,7 +5,8 @@ import typographyPlugin from '@tailwindcss/typography'
 import animatePlugin from 'tailwindcss-animate'
 // @ts-expect-error no esm module for this package
 import themeSwapperPlugin from 'tailwindcss-theme-swapper'
-import { baseTheme, type ColorPalette, darkTheme } from './themes'
+// noinspection ES6PreferShortImport
+import { baseTheme, type ColorPalette, darkTheme } from './app/_shared/themes'
 import colors from 'tailwindcss/colors'
 
 const palette = {
