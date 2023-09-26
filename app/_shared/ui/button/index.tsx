@@ -44,6 +44,6 @@ function ButtonLoadingIndicator(props: ButtonDecorationProps) {
   )
 }
 
-export { Button, ButtonLoadingIndicator }
+export { Button, ButtonLoadingIndicator, type ButtonProps }
 export { buttonVariants } from './styles'
 export { ButtonDecoration, useButtonContext } from './client'

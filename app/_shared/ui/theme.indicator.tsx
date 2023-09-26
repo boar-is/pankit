@@ -15,7 +15,7 @@ export default function ThemeIndicator() {
         <Button
           key={t}
           type="button"
-          color="muted"
+          variant="tertiary"
           onClick={() => setTheme(t)}
           className={cn(
             'backdrop-blur',

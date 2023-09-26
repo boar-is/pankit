@@ -9,7 +9,7 @@ import {
 
 export function Sidebar() {
   return (
-    <div className="flex flex-col border-r">
+    <div className="flex flex-col border-r border-border">
       <header className="p-4">
         <Link href="/">
           <BrandPanKit />

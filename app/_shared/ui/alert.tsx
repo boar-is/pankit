@@ -3,7 +3,7 @@ import { type HTMLAttributes } from 'react'
 import { InlineDecoration } from '@shared/ui/inline-decoration'
 
 export const alertVariants = tv({
-  base: 'flex items-center border border-transparent font-medium',
+  base: 'flex items-center border font-medium',
   variants: {
     color: {
       destructive: '',

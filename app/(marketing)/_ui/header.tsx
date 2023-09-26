@@ -63,7 +63,7 @@ export function Header() {
         <menu className="flex items-center gap-1 lg:gap-2">
           <li>
             <Button
-              variant="ghost"
+              variant="tertiary"
               asChild
             >
               <Link
@@ -78,7 +78,7 @@ export function Header() {
             <ThemeToggle />
           </li>
           <li className="ml-8 hidden lg:block">
-            <SessionButton />
+            <SessionButton variant="primary" />
           </li>
           <li className="lg:hidden">
             <DropdownMenu>
@@ -88,7 +88,7 @@ export function Header() {
               >
                 <Button
                   type="button"
-                  variant="ghost"
+                  variant="tertiary"
                 >
                   <MenuIcon className="rotate-0 scale-100 transition-transform group-data-[state=open]:-rotate-90 group-data-[state=open]:-scale-0" />
                   <XIcon className="absolute rotate-90 scale-0 transition-transform group-data-[state=open]:rotate-0 group-data-[state=open]:scale-100" />
@@ -97,7 +97,7 @@ export function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="mr-4">
                 <DropdownMenuLabel>
-                  <SessionButton />
+                  <SessionButton variant="primary" />
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
