@@ -29,9 +29,9 @@ import {
   NavigationMenuNextLink,
 } from '@shared/ui/navigation-menu'
 import { Button } from '@shared/ui/button'
-import { GitHubIcon } from '@shared/ui/icons'
 import { ThemeToggle } from '@shared/ui/theme-toggle'
 import { BrandPanKit } from '@shared/ui/brand-pankit'
+import { GitHubIcon } from '@shared/ui/icons'
 
 export function Header() {
   return (

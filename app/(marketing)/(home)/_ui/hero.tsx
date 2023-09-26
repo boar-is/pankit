@@ -1,5 +1,3 @@
-import { SessionButton } from '@marketing/_ui/session-button'
-import { GithubRepoLink } from '@marketing/(home)/_ui/github-repo-link'
 import {
   InfiniteSlider,
   InfiniteSliderItem,
@@ -19,6 +17,8 @@ import {
   TypeScriptIcon,
   VercelEdgeIcon,
 } from '@shared/ui/icons'
+import { SessionButton } from '@marketing/_ui/session-button'
+import { GithubRepoLink } from '@marketing/(home)/_ui/github-repo-link'
 
 export function Hero() {
   return (
@@ -41,11 +41,12 @@ export function Hero() {
       <menu className="container flex flex-col gap-3 sm:flex-row sm:justify-center md:max-w-xl">
         <SessionButton
           className="w-full"
+          variant="primary"
           size="large"
         />
         <GithubRepoLink
           className="w-full"
-          variant="outline"
+          variant="secondary"
           size="large"
         />
       </menu>

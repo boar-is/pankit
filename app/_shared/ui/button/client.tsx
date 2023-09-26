@@ -1,9 +1,9 @@
 'use client'
 
-import { type ButtonVariants } from '@shared/ui/button/styles'
 import { type HTMLAttributes } from 'react'
 import { InlineDecoration } from '@shared/ui/inline-decoration'
 import { createSafeContext } from '@shared/lib/create-safe-context'
+import { type ButtonVariants } from '@shared/ui/button/styles'
 
 const [ButtonProvider, useButtonContext] = createSafeContext<
   ButtonVariants & {
