@@ -27,7 +27,7 @@ export const baseTheme = ({
         DEFAULT: colors.white,
         foreground: gray['950'],
       },
-      border: gray['50'],
+      border: gray['100'],
       input: gray['50'],
       primary: {
         DEFAULT: primary['500'],

@@ -3,6 +3,7 @@ import './index.css'
 import { type Preview } from '@storybook/react'
 import { cn } from '@shared/lib/utils'
 import { variables } from '@shared/lib/fonts'
+import { StoryDecorator } from '@/.storybook/ui/story.decorator'
 
 const preview = {
   parameters: {
@@ -16,13 +17,13 @@ const preview = {
   },
   decorators: [
     (Story) => (
-      <div
-        className={cn(
-          'bg-background p-4 font-base text-foreground antialiased',
-          variables,
-        )}
-      >
-        <Story />
+      <div className={cn('font-base antialiased', variables)}>
+        <StoryDecorator>
+          <Story />
+        </StoryDecorator>
+        <StoryDecorator className="dark">
+          <Story />
+        </StoryDecorator>
       </div>
     ),
   ],
